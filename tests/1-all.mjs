@@ -1,8 +1,8 @@
 import fs from 'fs'
-import { BadgeTables } from '../src/BadgeTables.mjs'
+import { BadgeTable } from '../src/BadgeTable.mjs'
 import { examples } from './data/examples.mjs'
 
-const btg = new BadgeTables( true )
+const btg = new BadgeTable( true )
 
 const strs = Object
     .entries( examples )

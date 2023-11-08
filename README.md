@@ -1,16 +1,16 @@
-![CircleCI](https://img.shields.io/circleci/build/github/a6b8/badgeTables/main)
+![CircleCI](https://img.shields.io/circleci/build/github/a6b8/badgeTable/main)
 
 
 # Badge Table Generator
 
-Markdown table generation specifically tailored for displaying relevant data from JavaScript npm and Ruby gem packages.
+Helps create summary tables for modules and websites by adding badges through shields.io. It generates complex Markdown code with a simple payload for an easy-to-understand visual overview.
 
 
 ## Example
 
 **Code**
 ```js
-import { BadgeTables } from 'BadgeTables'
+import { BadgeTable } from 'BadgeTable'
 
 const config = {
     "template": "npmPackages",
@@ -30,7 +30,7 @@ const config = {
     ]
 }
 
-const btg = new BadgeTables()
+const btg = new BadgeTable()
 btg
     .getTable( value )
 ```
@@ -41,7 +41,7 @@ btg
 | Easy Mina | <a href="https://api.github.com/repos/EasyMina/easyMina"><img src="https://img.shields.io/github/last-commit/EasyMina/easyMina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <img src="https://img.shields.io/circleci/build/github/EasyMina/easyMina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="> | <a href="https://github.com/EasyMina/easyMina/stargazers"><img src="https://img.shields.io/github/stars/EasyMina/easyMina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a><img src="https://img.shields.io/npm/dt/easymina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="> | <img src="https://img.shields.io/github/license/EasyMina/easyMina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="> |
 | Mina Data | <a href="https://api.github.com/repos/EasyMina/minaData"><img src="https://img.shields.io/github/last-commit/EasyMina/minaData?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <img src="https://img.shields.io/circleci/build/github/EasyMina/minaData?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="> | <a href="https://github.com/EasyMina/minaData/stargazers"><img src="https://img.shields.io/github/stars/EasyMina/minaData?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a><img src="https://img.shields.io/npm/dt/minadata?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="> | <img src="https://img.shields.io/github/license/EasyMina/minaData?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="> |
 
-This table is generated using https://github.com/a6b8/BadgeTables.
+This table is generated using https://github.com/a6b8/BadgeTable.
 
 
 ## Table of Contents
@@ -90,11 +90,11 @@ For `projects` items will following key are expected:
 
 ```.getConfig( { config } )```
 
-To customize your configuration, you can provide your own config. It is recommended to modify the [default configuration](https://github.com/a6b8/BadgeTables/blob/main/src/data/config.mjs). The configuration distinguishes between `Badges`, `Columns`, and `Templates`. Within `Badges`, each badge is defined using a `struct`. The `wrapperUrl` can be used to create a clickable link, and the `shield` represents the actual badge content. The `struct` expects pseudo-HTML enclosed in "<<" and ">>". Variables within the payload are denoted by "{{" and "}}".
+To customize your configuration, you can provide your own config. It is recommended to modify the [default configuration](https://github.com/a6b8/BadgeTable/blob/main/src/data/config.mjs). The configuration distinguishes between `Badges`, `Columns`, and `Templates`. Within `Badges`, each badge is defined using a `struct`. The `wrapperUrl` can be used to create a clickable link, and the `shield` represents the actual badge content. The `struct` expects pseudo-HTML enclosed in "<<" and ">>". Variables within the payload are denoted by "{{" and "}}".
 
 ```js
-import { BadgeTables } from 'markdown-table-generator'
-const btg = new BadgeTables( true )
+import { BadgeTable } from 'markdown-table-generator'
+const btg = new BadgeTable( true )
 
 const yourConfig = {}
 const markDown = btg
@@ -140,4 +140,4 @@ Currently, there are 3 different templates to choose from. Generation is done us
 
 ## License
 
-The module is available as open source under the terms of the [MIT](https://github.com/a6b8/BadgeTables/blob/main/LICENSE).
+The module is available as open source under the terms of the [MIT](https://github.com/a6b8/BadgeTable/blob/main/LICENSE).

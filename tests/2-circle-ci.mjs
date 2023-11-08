@@ -1,9 +1,9 @@
 import fs from 'fs'
-import { BadgeTables } from '../src/BadgeTables.mjs'
+import { BadgeTable } from '../src/BadgeTable.mjs'
 import { examples } from './data/examples.mjs'
 import crypto from 'crypto'
 
-const mtg = new BadgeTables( true )
+const mtg = new BadgeTable( true )
 const expect = [
     'c8e43ceb6e5e04b17ebb152c99500391',
     '4488e577bc0c6dbb25e52f3d2ca6093f',

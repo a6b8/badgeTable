@@ -13,23 +13,28 @@
 import { configImported } from './data/config.mjs'
 
 
-export class BadgeTables {
+export class BadgeTable {
     #config
     #debug
 
 
     constructor( debug ) {
         this.#debug = debug
-        this.setConfig( configImported )
+        this.setConfig( configImported, true )
 
         return true
     }
 
 
-    setConfig( config ) {
+    setConfig( config, init ) {
         if( config !== undefined ) {
-            console.log( `Set custom config!` )
+            if( init !== true ) {
+                console.log( `Set custom config!` )
+            }
             this.#config = config
+        } else {
+            console.log( 'Config not found !' )
+            process.exit( 1 )
         }
 
         Object
