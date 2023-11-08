@@ -10,7 +10,7 @@ Helps create summary tables for modules and websites by adding badges through sh
 
 **Code**
 ```js
-import { BadgeTable } from 'BadgeTable'
+import { BadgeTable } from 'badgetable'
 
 const config = {
     "template": "npmPackages",
@@ -31,8 +31,7 @@ const config = {
 }
 
 const btg = new BadgeTable()
-btg
-    .getTable( value )
+btg.getTable( value )
 ```
 
 **Result**
@@ -60,7 +59,7 @@ The module contains only two methods: `.getTable()` and `.setConfig()`.
 
 ```
 npm init -y
-npm i markdown-table-generator
+npm i badgetable
 ```
 
 ### .getTable()
@@ -94,7 +93,7 @@ For `projects` items will following key are expected:
 To customize your configuration, you can provide your own config. It is recommended to modify the [default configuration](https://github.com/a6b8/BadgeTable/blob/main/src/data/config.mjs). The configuration distinguishes between `Badges`, `Columns`, and `Templates`. Within `Badges`, each badge is defined using a `struct`. The `wrapperUrl` can be used to create a clickable link, and the `shield` represents the actual badge content. The `struct` expects pseudo-HTML enclosed in "<<" and ">>". Variables within the payload are denoted by "{{" and "}}".
 
 ```js
-import { BadgeTable } from 'markdown-table-generator'
+import { BadgeTable } from 'badgetable'
 const btg = new BadgeTable( true )
 
 const yourConfig = {}
