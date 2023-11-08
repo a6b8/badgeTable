@@ -3,10 +3,10 @@ export const examples = {
         "template": "npmPackages",
         "projects": [
             {
-                "title": "Badge Table Generator",
-                "packageName": "badgeTableGenerator",
+                "title": "Badge Table",
+                "packageName": "badgetable",
                 "githubUserName": "a6b8",
-                "githubRepository": "badgeTableGenerator"
+                "githubRepository": "badgeTable"
             },
             {
                 "title": "Ethereum Sanction Check",

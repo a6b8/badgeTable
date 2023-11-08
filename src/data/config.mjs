@@ -167,7 +167,7 @@ export const configImported = {
             'center': '-:-',
             'right': '--:'
         },
-        'footerText': 'This table is generated using https://github.com/a6b8/badgeTables'
+        'footerText': 'This table is generated using https://github.com/a6b8/badgeTable'
     },
     'styles': {
         'default': {

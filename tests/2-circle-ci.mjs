@@ -5,10 +5,10 @@ import crypto from 'crypto'
 
 const mtg = new BadgeTable( true )
 const expect = [
-    'c8e43ceb6e5e04b17ebb152c99500391',
-    '4488e577bc0c6dbb25e52f3d2ca6093f',
-    'edd0790849e6e8cf7b8bb80609342978',
-    '1697e6219567c160296ac3f284e95822',
+    'ff89f26e5c5aacb96792d5371807b086',
+    '2be1341b2abbfcc862ded9bec18b5cb4',
+    'c501999222f4a8ceac1c8bc743805bbf',
+    'ae5aed355cb9de5856c3d045e4d80eb3',
 ]
 
 const check = []
