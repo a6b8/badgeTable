@@ -3,12 +3,12 @@ import { BadgeTable } from '../src/BadgeTable.mjs'
 import { examples } from './data/examples.mjs'
 import crypto from 'crypto'
 
-const mtg = new BadgeTable( true )
+const bt = new BadgeTable( true )
 const expect = [
-    'ff89f26e5c5aacb96792d5371807b086',
-    '2be1341b2abbfcc862ded9bec18b5cb4',
-    'c501999222f4a8ceac1c8bc743805bbf',
-    'ae5aed355cb9de5856c3d045e4d80eb3',
+    '9278f3c2ff183438938c334c6c8113ae',
+    '88f5c2ea2351818ca28240f2c65bdb33',
+    '282e2e966c51501f6a9ba8b87ce0baba',
+    '7e476f24c31e03bc56d36ce3e7d6c94f',
 ]
 
 const check = []
@@ -18,7 +18,7 @@ const strs = Object
     .map( ( a, index, all ) => {
         index === 0 ? console.log( "[" ) : ''
         const [ key, value ] = a
-        const table = mtg.getTable( value )
+        const table = bt.getTable( value )
 
         const md5Hash = crypto
             .createHash( 'md5' )

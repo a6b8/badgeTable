@@ -26,6 +26,11 @@ export class BadgeTable {
     }
 
 
+    getConfig() {
+        return this.#config
+    }
+
+
     setConfig( config, init ) {
         if( config !== undefined ) {
             if( init !== true ) {

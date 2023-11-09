@@ -83,7 +83,7 @@ export const configImported = {
     'badges': {
         'textDefault': {
             'struct': '<<markdownUrlName>>',
-            'wrapperUrl': '',
+            'wrapperUrl': '{{tree__links__githubRepository}}',
             'shield': ''
         },
         'textUrl': {
@@ -127,13 +127,13 @@ export const configImported = {
             'shield': 'https://img.shields.io/github/stars/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
         },
         'gemDownloads': {
-            'struct': '<<shield>>',
-            'wrapperUrl': 'https://rubygems.org/gems/{{packageName}}',
+            'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
+            'wrapperUrl': '{{tree__links__githubTraffic}}',
             'shield': 'https://img.shields.io/gem/dt/{{packageName}}?{{tree__styles__default__url}}'
         },
         'npmDownloads': {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
-            'wrapperUrl': 'https://www.npmjs.com/package/{{packageName}}',
+            'wrapperUrl': '{{tree__links__githubTraffic}}',
             'shield': 'https://img.shields.io/npm/dt/{{packageName}}?{{tree__styles__default__url}}'
         },
         'githubLicense': {

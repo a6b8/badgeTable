@@ -86,6 +86,13 @@ For `projects` items will following key are expected:
 |   githubRepository | String | `true` |
 
 
+### .getConfig()
+
+```.getConfig()```
+
+Retrieve the default configuration after auto-generation. This can be useful if you want to create your custom configuration.
+
+
 ### .setConfig()
 
 ```.getConfig( { config } )```
