@@ -32,7 +32,41 @@ export const configImported = {
                 [ 'tree__columns__uptime', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__url', 'tree__markdown__alignment__left' ]
             ]
-        }
+        },
+        'githubStats': {
+            'headline': 'Github',
+            'validation': [ 'title', 'githubUserName', 'githubRepository' ],
+            'structs': [ 
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubStars', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubSize', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubFileCount', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
+            ],
+        },
+        'githubSimple': {
+            'headline': 'Github',
+            'validation': [ 'title', 'githubUserName', 'githubRepository' ],
+            'structs': [ 
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
+            ],
+        },
+        'githubPackages': {
+            'headline': 'Github',
+            'validation': [ 'title', 'githubUserName', 'githubRepository' ],
+            'structs': [ 
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubStars', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubSize', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubFileCount', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__packageData', 'tree__markdown__alignment__left' ]
+            ]
+        },
     },
     'columns': {
         'text': {
@@ -59,6 +93,18 @@ export const configImported = {
             'headline': 'Updated',
             'row': [ 'tree__badges__gitHubLastCommit' ]
         },
+        'githubSize': {
+            'headline': 'Size',
+            'row': [ 'tree__badges__githubRepositorySize' ]
+        },
+        'packageData': {
+            'headline': 'Package',
+            'row': [ 'tree__badges__packageData' ]
+        },
+        'githubFileCount': {
+            'headline': 'Files',
+            'row': [ 'tree__badges__githubRepositoryFileCount' ]
+        },
         'continiousIntegration': {
             'headline': 'Tests',
             'row': [ 'tree__badges__circleCiBuild' ]
@@ -70,6 +116,10 @@ export const configImported = {
         'npmStatistics': {
             'headline': 'Statistics',
             'row': [ 'tree__badges__gitHubRepositoryStars', 'tree__badges__npmDownloads' ]
+        },
+        'githubStars': {
+            'headline': 'Stars',
+            'row': [ 'tree__badges__gitHubRepositoryStars' ]
         },
         'license': {
             'headline': 'License',
@@ -126,6 +176,16 @@ export const configImported = {
             'wrapperUrl': '{{tree__links__githubRepositoryStars}}',
             'shield': 'https://img.shields.io/github/stars/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
         },
+        'githubRepositorySize': {
+            'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
+            'wrapperUrl': '{{tree__links__githubRepository}}',
+            'shield': 'https://img.shields.io/github/repo-size/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
+        },      
+        'githubRepositoryFileCount': {
+            'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
+            'wrapperUrl': '{{tree__links__githubRepository}}',
+            'shield': 'https://img.shields.io/github/directory-file-count/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
+        },        
         'gemDownloads': {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
             'wrapperUrl': '{{tree__links__githubTraffic}}',
@@ -145,10 +205,15 @@ export const configImported = {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
             'wrapperUrl': '{{tree__links__githubRepository}}',
             'shield': 'https://shields.io/uptimerobot/status/{{uptimeRobotId}}?{{tree__styles__default__url}}'
+        },
+        'packageData': {
+            'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
+            'wrapperUrl': 'https://github.com/{{githubUserName}}/{{githubRepository}}/raw/{{githubBranch}}/package.json',
+            'shield': 'https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2F{{githubUserName}}%2F{{githubRepository}}%2Fraw%2F{{githubBranch}}%2Fpackage.json&query=%24.{{jsonPath}}&{{tree__styles__default__url}}'
         }
     },
     'html': {
-        'image': [ '<img src="{{imageUrl}}" style="max-width: 100%; height: 25px; filter: grayscale(1);">'],
+        'image': [ '<img src="{{imageUrl}}" style="max-width: 100%; height: 25px; filter: grayscale(1);">' ],
         'markdownUrlX': [ '[X]({{tree__badges__self__wrapperUrl}})' ],
         'markdownUrlPure': [ '[{{tree__badges__self__wrapperUrl}}]({{tree__badges__self__wrapperUrl}})', '' ],
         'markdownUrlName': [ '[{{title}}]({{tree__badges__self__wrapperUrl}})', '' ],
@@ -156,7 +221,7 @@ export const configImported = {
         'shield': [ '<img src="{{tree__badges__self__shield}}">', '' ]
     },
     'links': {
-        'githubLicense': 'https://github.com/{{githubUserName}}/{{githubRepository}}/blob/main/LICENSE',
+        'githubLicense': 'https://github.com/{{githubUserName}}/{{githubRepository}}/blob/{{githubBranch}}/LICENSE',
         'githubRepository': 'https://github.com/{{githubUserName}}/{{githubRepository}}',
         'githubTraffic': 'https://github.com/{{githubUserName}}/{{githubRepository}}/graphs/traffic',
         'githubRepositoryStars': 'https://github.com/{{githubUserName}}/{{githubRepository}}/stargazers'

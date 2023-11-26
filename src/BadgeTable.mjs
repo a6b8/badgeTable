@@ -66,9 +66,21 @@ export class BadgeTable {
                 .sort( ( a, b ) => a.title.localeCompare( b.title ) )
         }
 
+        projects = projects
+            .map( project => {
+                if( !Object.hasOwn( project, 'githubBranch' ) ) {
+                    project['githubBranch'] = 'main'
+                }
+                return project
+            } )
+
+
         let table = []
-        table.push( `**${this.#config['templates'][ template ]['headline']}**`)
+
+        /*
+        table.push( `**${this.#config['templates'][ template ]['headline']}**` )
         table.push( '' )
+        */
 
         const headlines = this.#config['templates'][ template ]['structs']
             .map( a => [ `${a[ 0 ]}__headline`, a[ 1 ] ] )

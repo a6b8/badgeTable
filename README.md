@@ -12,26 +12,24 @@ Helps create summary tables for modules and websites by adding badges through sh
 ```js
 import { BadgeTable } from 'badgetable'
 
-const config = {
-    "template": "npmPackages",
-    "projects": [
+const btg = new BadgeTable()
+btg.getTable( {
+    'template': 'npmPackages',
+    'projects': [
         {
-            "title": "Easy Mina",
-            "packageName": "easymina",
-            "githubUserName": "EasyMina",
-            "githubRepository": "easyMina"
+            'title': 'Easy Mina',
+            'packageName': 'easymina',
+            'githubUserName': 'EasyMina',
+            'githubRepository': 'easyMina'
         },
         {
-            "title": "Mina Data",
-            "packageName": "minadata",
-            "githubUserName": "EasyMina",
-            "githubRepository": "minaData"
+            'title': 'Mina Data',
+            'packageName': 'minadata',
+            'githubUserName': 'EasyMina',
+            'githubRepository': 'minaData'
         }
     ]
-}
-
-const btg = new BadgeTable()
-btg.getTable( value )
+} )
 ```
 
 **Result**
