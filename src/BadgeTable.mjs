@@ -57,8 +57,8 @@ export class BadgeTable {
     }
 
 
-    getTable( { template, projects, sort=true } ) {
-        const [ messages, comments ] = this.#validateGetTable( { template, projects, sort } )
+    getTable( { preset, projects, sort=true, footer=true, header=false } ) {
+        const [ messages, comments ] = this.#validateGetTable( { preset, projects, sort, footer, header } )
         this.#printValidation( { messages, comments } )
 
         if( sort === true ) {
@@ -77,23 +77,25 @@ export class BadgeTable {
 
         let table = []
 
-        /*
-        table.push( `**${this.#config['templates'][ template ]['headline']}**` )
-        table.push( '' )
-        */
+        if( header ) {
+            table.push( `**${this.#config['presets'][ preset ]['headline']}**` )
+            table.push( '' )
+        }
 
-        const headlines = this.#config['templates'][ template ]['structs']
+        const headlines = this.#config['presets'][ preset ]['structs']
             .map( a => [ `${a[ 0 ]}__headline`, a[ 1 ] ] )
         this.#generateHeadline( { headlines } )
             .forEach( row => table.push( row ) )
 
-        const row = this.#config['templates'][ template ]['structs']
+        const row = this.#config['presets'][ preset ]['structs']
             .map( a => a[ 0 ] )
         this.#generateRows( { row, projects } )
             .forEach( row => table.push( row ) )
 
-        table.push( '' )
-        table.push( this.#config['markdown']['footerText'] )
+        if( footer ) {
+            table.push( '' )
+            table.push( this.#config['markdown']['footerText'] )
+        }
 
         return table.join( "\n" )
     }
@@ -230,7 +232,7 @@ export class BadgeTable {
     }
 
 
-    #validateGetTable( { template, projects, sort } ) {
+    #validateGetTable( { preset, projects, sort, footer, header } ) {
         const messages = []
         const comments = []
 
@@ -238,9 +240,9 @@ export class BadgeTable {
             comments.push( `Key "sort" is not of type boolean. Value "${sort}" will ignored.` )
         }
 
-        const knownKeys = Object.keys( this.#config['templates'] )
-        if( !knownKeys.includes( template ) ) {
-            const error = `Key "template" with the value ${template} is not known. Use ${JSON.stringify( knownKeys )} instead.`
+        const knownKeys = Object.keys( this.#config['presets'] )
+        if( !knownKeys.includes( preset ) ) {
+            const error = `Key "preset" with the value ${preset} is not known. Use ${JSON.stringify( knownKeys )} instead.`
             console.log( error )
             process.exit( 1 )
             // messages.push( error )
@@ -248,17 +250,28 @@ export class BadgeTable {
 
         projects
             .forEach( ( project, index ) => {
-                const n = this.#config['templates'][ template ]['validation']
+                const n = this.#config['presets'][ preset ]['validation']
                     .forEach( ( key ) => {
                         if( !project.hasOwnProperty( key ) ) {
-                            messages.push( `Index [${index}] Key "${key}" is missing.`)
+                            messages.push( `Index [${index}] Key "${key}" is missing.` )
                         }
 
-                        if( typeof project[ key ] !== "string" ) {
-                            messages.push( `Index [${index}] Key "${key}" is not type "string".`)
+                        if( typeof project[ key ] !== 'string' ) {
+                            messages.push( `Index [${index}] Key "${key}" is not type "string".` )
                         }
                     } )
                 return true
+            } )
+
+        const n = [
+            [ 'header', header ],
+            [ 'footer', footer ]
+        ]
+            .forEach( a => {
+                const [ key, value ] = a
+                if (typeof value !== 'boolean' ) {
+                    messages.push( `Key '${key}' is not type of 'boolean'.` )
+                }
             } )
 
         return [ messages, comments ]

@@ -1,7 +1,20 @@
 export const configImported = {
-    'templates': {
+    'presets': {
         'gemPackages': {
             'headline': 'Gem Packages',
+            'description': 'Table for Ruby Gem Packages with version number, latest update, total download numbers, and license.', 
+            'validation': [ 'title', 'packageName', 'githubUserName', 'githubRepository' ],
+            'structs': [ 
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__gemVersion', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__gemStatistics', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
+            ],
+        },
+        'gemPackagesCircleCi': {
+            'headline': 'Gem Packages',
+            'description': 'Table for Ruby Gem Packages with version number, latest update, total download numbers, license, and test integration via CircleCI.', 
             'validation': [ 'title', 'packageName', 'githubUserName', 'githubRepository' ],
             'structs': [ 
                 [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
@@ -14,6 +27,19 @@ export const configImported = {
         },
         'npmPackages': {
             'headline': 'Npm Packages',
+            'description': 'Table for Node.js Packages with version number, latest update, total download numbers, and license.', 
+            'validation': [ 'title', 'packageName', 'githubUserName', 'githubRepository' ],
+            'structs': [
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__npmVersion', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__npmStatistics', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
+            ]
+        },
+        'npmPackagesCircleCi': {
+            'headline': 'Npm Packages',
+            'description': 'Table for Node.js Packages with version number, latest update, total download numbers, license, and integration via CircleCI.', 
             'validation': [ 'title', 'packageName', 'githubUserName', 'githubRepository' ],
             'structs': [
                 [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
@@ -26,7 +52,8 @@ export const configImported = {
         },
         'documentation': {
             'headline': 'Documentation',
-            'validation': [ 'title', 'imageUrl', 'uptimeRobotId', 'githubUserName', 'githubRepository' ],
+            'description': 'Table for displaying dedicated documentations with images, uptime status, and URLs.',
+            'validation': [ 'title', 'imageUrl', 'uptimeRobotId', 'githubUserName', 'githubRepository', 'url' ],
             'structs': [
                 [ 'tree__columns__image', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__uptime', 'tree__markdown__alignment__left' ],
@@ -35,35 +62,62 @@ export const configImported = {
         },
         'githubStats': {
             'headline': 'Github',
+            'description': 'Table for GitHub Statistics such as Stars, Total File Size, Total File Count, and License.',
             'validation': [ 'title', 'githubUserName', 'githubRepository' ],
             'structs': [ 
                 [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubStars', 'tree__markdown__alignment__left' ],
-                [ 'tree__columns__githubSize', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubFileCount', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubSize', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
             ],
         },
-        'githubSimple': {
+        'githubActivity': {
             'headline': 'Github',
-            'validation': [ 'title', 'githubUserName', 'githubRepository' ],
-            'structs': [ 
-                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
-                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
-                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
-            ],
-        },
-        'githubPackages': {
-            'headline': 'Github',
+            'description': 'Table for GitHub Activity Stats like Total Stars, Total Commits, Total Contributors, and License.',
             'validation': [ 'title', 'githubUserName', 'githubRepository' ],
             'structs': [ 
                 [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubStars', 'tree__markdown__alignment__left' ],
-                [ 'tree__columns__githubSize', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubCommits', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubContributors', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
+            ],
+        },
+        'githubAdvanced': {
+            'headline': 'Github',
+            'description': 'Table for GitHub Statistics and Activity, including Total Stars, Total Commits, Total Contributors, Total File Size, Total File Count, and License.',
+            'validation': [ 'title', 'githubUserName', 'githubRepository' ],
+            'structs': [ 
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubStars', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubCommits', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubContributors', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubFileCount', 'tree__markdown__alignment__left' ],
-                [ 'tree__columns__license', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubSize', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
+            ],
+        },
+        'githubMinimal': {
+            'headline': 'Github',
+            'description': 'Table for GitHub with the last update date and License.', 
+            'validation': [ 'title', 'githubUserName', 'githubRepository' ],
+            'structs': [ 
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
+            ],
+        },
+        'dynamicPackageSearch': {
+            'headline': 'Github',
+            'description': 'Table for GitHub with dynamic search for package.json, including last updated date, Total Stars, Total File Size, Total File Count, and License.',
+            'validation': [ 'title', 'githubUserName', 'githubRepository', 'jsonPath' ],
+            'structs': [ 
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__packageData', 'tree__markdown__alignment__left' ]
             ]
         },
@@ -104,6 +158,14 @@ export const configImported = {
         'githubFileCount': {
             'headline': 'Files',
             'row': [ 'tree__badges__githubRepositoryFileCount' ]
+        },
+        'githubCommits': {
+            'headline': 'Commits',
+            'row': [ 'tree__badges__githubCommits' ]
+        },
+        'githubContributors': {
+            'headline': 'Contributors',
+            'row': [ 'tree__badges__githubContributors' ]
         },
         'continiousIntegration': {
             'headline': 'Tests',
@@ -201,6 +263,16 @@ export const configImported = {
             'wrapperUrl': '{{tree__links__githubLicense}}',
             'shield': 'https://img.shields.io/github/license/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
         },
+        'githubCommits': {
+            'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
+            'wrapperUrl': '{{tree__links__githubCommits}}',
+            'shield': 'https://img.shields.io/github/commit-activity/t/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
+        },
+        'githubContributors': {
+            'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
+            'wrapperUrl': '{{tree__links__githubContributors}}',
+            'shield': 'https://img.shields.io/github/contributors/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
+        },
         'uptimeRobot': {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
             'wrapperUrl': '{{tree__links__githubRepository}}',
@@ -224,6 +296,8 @@ export const configImported = {
         'githubLicense': 'https://github.com/{{githubUserName}}/{{githubRepository}}/blob/{{githubBranch}}/LICENSE',
         'githubRepository': 'https://github.com/{{githubUserName}}/{{githubRepository}}',
         'githubTraffic': 'https://github.com/{{githubUserName}}/{{githubRepository}}/graphs/traffic',
+        'githubCommits': 'https://github.com/{{githubUserName}}/{{githubRepository}}/commit/{{githubBranch}}',
+        'githubContributors': 'https://github.com/{{githubUserName}}/{{githubRepository}}/graphs/contributors',
         'githubRepositoryStars': 'https://github.com/{{githubUserName}}/{{githubRepository}}/stargazers'
     },
     'markdown': {
