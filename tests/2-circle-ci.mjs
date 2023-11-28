@@ -5,10 +5,9 @@ import crypto from 'crypto'
 
 const bt = new BadgeTable( true )
 const expect = [
-    '9278f3c2ff183438938c334c6c8113ae',
-    '88f5c2ea2351818ca28240f2c65bdb33',
-    '282e2e966c51501f6a9ba8b87ce0baba',
-    '7e476f24c31e03bc56d36ce3e7d6c94f',
+    '3331edbd1bc25661177cf4a45c673597',
+    '9d718ccf9f6638231cd260b5e621e490',
+    '3c8d12d09e3e69c4fcc9f5a200ab96e9',
 ]
 
 const check = []

@@ -17,6 +17,12 @@ Helps create summary tables for modules and websites by adding badges through sh
 
 ## Example
 
+| Title | Version | Updated | Statistics | Tests | License |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| [Easy Mina]() | <a href="https://www.npmjs.com/package/easymina?activeTab=versions"><img src="https://img.shields.io/npm/v/easymina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://api.github.com/repos/EasyMina/easyMina"><img src="https://img.shields.io/github/last-commit/EasyMina/easyMina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/EasyMina/easyMina/stargazers"><img src="https://img.shields.io/github/stars/EasyMina/easyMina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a><a href="https://www.npmjs.com/package/easymina"><img src="https://img.shields.io/npm/dt/easymina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/EasyMina/easyMina"><img src="https://img.shields.io/circleci/build/github/EasyMina/easyMina?logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/EasyMina/easyMina/blob/main/LICENSE"><img src="https://img.shields.io/github/license/EasyMina/easyMina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> |
+| [Mina Data]() | <a href="https://www.npmjs.com/package/minadata?activeTab=versions"><img src="https://img.shields.io/npm/v/minadata?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://api.github.com/repos/EasyMina/minaData"><img src="https://img.shields.io/github/last-commit/EasyMina/minaData?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/EasyMina/minaData/stargazers"><img src="https://img.shields.io/github/stars/EasyMina/minaData?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a><a href="https://www.npmjs.com/package/minadata"><img src="https://img.shields.io/npm/dt/minadata?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/EasyMina/minaData"><img src="https://img.shields.io/circleci/build/github/EasyMina/minaData?logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/EasyMina/minaData/blob/main/LICENSE"><img src="https://img.shields.io/github/license/EasyMina/minaData?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> |
+
+
 **Code**
 ```js
 import { BadgeTable } from 'badgetable'
@@ -40,14 +46,6 @@ btg.getTable( {
     ]
 } )
 ```
-
-**Result**
-| Title | Version | Updated | Statistics | Tests | License |
-| :-- | :-- | :-- | :-- | :-- | :-- |
-| [Easy Mina]() | <a href="https://www.npmjs.com/package/easymina?activeTab=versions"><img src="https://img.shields.io/npm/v/easymina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://api.github.com/repos/EasyMina/easyMina"><img src="https://img.shields.io/github/last-commit/EasyMina/easyMina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/EasyMina/easyMina/stargazers"><img src="https://img.shields.io/github/stars/EasyMina/easyMina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a><a href="https://www.npmjs.com/package/easymina"><img src="https://img.shields.io/npm/dt/easymina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/EasyMina/easyMina"><img src="https://img.shields.io/circleci/build/github/EasyMina/easyMina?logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/EasyMina/easyMina/blob/main/LICENSE"><img src="https://img.shields.io/github/license/EasyMina/easyMina?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> |
-| [Mina Data]() | <a href="https://www.npmjs.com/package/minadata?activeTab=versions"><img src="https://img.shields.io/npm/v/minadata?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://api.github.com/repos/EasyMina/minaData"><img src="https://img.shields.io/github/last-commit/EasyMina/minaData?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/EasyMina/minaData/stargazers"><img src="https://img.shields.io/github/stars/EasyMina/minaData?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a><a href="https://www.npmjs.com/package/minadata"><img src="https://img.shields.io/npm/dt/minadata?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/EasyMina/minaData"><img src="https://img.shields.io/circleci/build/github/EasyMina/minaData?logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/EasyMina/minaData/blob/main/LICENSE"><img src="https://img.shields.io/github/license/EasyMina/minaData?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> |
-
-This table is generated using https://github.com/a6b8/BadgeTable.
 
 
 ## Table of Contents
@@ -82,8 +80,7 @@ Table for `"preset"`:
 | sort     | Boolean             | `false`  |  `false`|
 
 
-
-As default following keys are possible "npmPackages", "gemPackages" for "templates". To customize the output use [.setConfig() ](#setConfig())
+As default following keys are possible "npmPackages", "gemPackages" for "presets". To customize the output use [.setConfig() ](#setConfig())
 
 
 ### .getConfig()

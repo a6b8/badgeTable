@@ -1,6 +1,6 @@
 export const examples = {
-    'npm': {
-        'template': 'npmPackages',
+    'npmPackages': {
+        'preset': 'npmPackages',
         'projects': [
             {
                 'title': 'Badge Table',
@@ -40,8 +40,8 @@ export const examples = {
             }
         ]
     },
-    'gem': {
-        'template': 'gemPackages',
+    'gemPackages': {
+        'preset': 'gemPackages',
         'projects': [
             {
                 'title': 'Masked Ape Club',
@@ -105,25 +105,8 @@ export const examples = {
             }
         ]
     },
-    'easymina': {
-        'template': 'npmPackages',
-        'projects': [
-            {
-                'title': 'Easy Mina',
-                'packageName': 'easymina',
-                'githubUserName': 'EasyMina',
-                'githubRepository': 'easyMina'
-            },
-            {
-                'title': 'Mina Data',
-                'packageName': 'minadata',
-                'githubUserName': 'EasyMina',
-                'githubRepository': 'minaData'
-            },  
-        ]
-    },
-    'docs': {
-        'template': 'documentation',
+    'documentation': {
+        'preset': 'documentation',
         'projects': [
             {
                 'title': 'Statosio',
@@ -150,53 +133,5 @@ export const examples = {
                 }
             */
         ]
-    },
-    'packageData': {
-        'template': 'githubPackages',
-        'projects': [
-            {
-                'title': 'Badge Table',
-                'packageName': 'badgetable',
-                'githubUserName': 'a6b8',
-                'githubRepository': 'badgeTable',
-                'jsonPath': 'dependencies.o1js'
-            },
-            {
-                'title': 'Ethereum Sanction Check',
-                'packageName': 'ethereum-sanction-check',
-                'githubUserName': 'a6b8',
-                'githubRepository': 'ethereum-sanction-check-for-nodejs',
-                'jsonPath': 'dependencies.o1js'
-            },
-            {
-                'title': 'Easy Mina',
-                'packageName': 'easymina',
-                'githubUserName': 'EasyMina',
-                'githubRepository': 'easyMina',
-                'githubBranch': 'main',
-                'jsonPath': 'dependencies.o1js'
-            },
-            {
-                'title': 'Repo 2 File',
-                'packageName': 'repo2file',
-                'githubUserName': 'a6b8',
-                'githubRepository': 'repo2file',
-                'jsonPath': 'dependencies.o1js'
-            },
-            {
-                'title': 'Mina Data',
-                'packageName': 'minadata',
-                'githubUserName': 'EasyMina',
-                'githubRepository': 'minaData',
-                'jsonPath': 'dependencies.o1js'
-            },
-            {
-                'title': 'Sat Names',
-                'packageName': 'satnames',
-                'githubUserName': 'a6b8',
-                'githubRepository': 'satnames',
-                'jsonPath': 'dependencies.o1js'
-            }
-        ]
-    },
+    }
 }

@@ -2,7 +2,6 @@ import fs from 'fs'
 import { BadgeTable } from '../src/BadgeTable.mjs'
 import { examples } from './data/examples.mjs'
 
-
 const bt = new BadgeTable( true )
 
 console.log( examples['packageData'] )

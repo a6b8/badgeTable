@@ -5,6 +5,6 @@ import { examples } from './data/examples.mjs'
 
 const btg = new BadgeTable( true )
 const result = btg
-    .getTable( examples['docs'] )
+    .getTable( examples['documentation'] )
 
 console.log( result )

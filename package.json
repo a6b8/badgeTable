@@ -1,6 +1,6 @@
 {
   "name": "badgetable",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Helps create summary tables for modules and websites by adding badges through shields.io. It generates complex Markdown code with a simple payload for an easy-to-understand visual overview.",
   "main": "./src/BadgeTable.mjs",
   "directories": {
