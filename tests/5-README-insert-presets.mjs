@@ -27,12 +27,10 @@ mds += Object
         const payload = { preset, projects }
         
         acc += `### ${preset}\n`
-        acc += "\n"
-        acc += `${v['description']}\n\n`
-        acc += `**Result:**\n`
         const modPayload = { ...payload, 'footer': false }
         acc += bt.getTable( modPayload )
         acc += "\n\n"
+        acc += `${v['description']}\n\n`
         acc += `**Required Keys:**\n`
         acc += v['validation']
             .reduce( ( abb, b, rindex ) => {
