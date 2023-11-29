@@ -44,7 +44,7 @@ const mds = Object
         const modPayload = { ...payload, 'footer': false }
 
         let table = bt.getTable( modPayload )
-        const implementation = `Implementation: [./tests/results/all.md#${preset}](./tests/results/all.md#${preset})\n\n`
+        const implementation = `Implementation: [${cfg['test']}#${preset}](./tests/results/all.md#${preset})\n\n`
 
         if( cfg['example'] === preset ) {
             acc['example'] += table + "\n\n"
@@ -76,7 +76,7 @@ const mds = Object
         acc['all'] += `\`\`\`\n\n`
 
         return acc
-    }, { 'readme': '', 'all': '', 'example': '' } )
+    }, { 'readme': '', 'all': "# Presets\n\n", 'example': '' } )
 
 fs.writeFileSync( cfg['test'], mds['all'], 'utf-8' )
 
