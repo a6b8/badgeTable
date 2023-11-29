@@ -44,7 +44,7 @@ const mds = Object
         const modPayload = { ...payload, 'footer': false }
 
         let table = bt.getTable( modPayload )
-        const implementation = `Implementation: [${cfg['test']}#${preset}](./tests/results/all.md#${preset})\n\n`
+        const implementation = `Implementation: [${cfg['test']}#${preset}](${cfg['test']}#${preset})\n\n`
 
         if( cfg['example'] === preset ) {
             acc['example'] += table + "\n\n"
