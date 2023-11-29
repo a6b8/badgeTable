@@ -77,8 +77,6 @@ const mds = Object
 
         return acc
     }, { 'readme': '', 'all': '', 'example': '' } )
-  console.log( '>>>', mds['example'] )
-
 
 fs.writeFileSync( cfg['test'], mds['all'], 'utf-8' )
 
