@@ -11,7 +11,7 @@ export const repositories = [
         'packageName': 'ethereum-sanction-check',
         'githubUserName': 'a6b8',
         'githubRepository': 'ethereum-sanction-check-for-nodejs',
-        'tags': [ 'npm' ]
+        'tags': []
     },
     {
         'title': 'Easy Mina',
