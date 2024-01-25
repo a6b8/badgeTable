@@ -5,7 +5,7 @@ export const repositories = [
         'githubUserName': 'a6b8',
         'githubRepository': 'badgeTable',
         'tags': [ 'npm', 'git', 'art' ],
-        'url': 'https://dedeed',
+        'url': 'https://medium.com/@a6b8',
     },
     {
         'title': 'Ethereum Sanction Check',
