@@ -20,6 +20,11 @@ Features:
 - Dynamic information can be inserted into individual cells using, for example, `shields.io` badges.
 - Customized to meet the needs of open-source repository maintainers. To efficiently monitor metrics from various repositories.
 
+```
+npm init -y
+npm i badgetable
+```
+
 
 ## Example
 
@@ -37,10 +42,26 @@ See [#presets](#presets) for more examples.
 
 ## Table of Contents
 
-1. [Example](#example)<br>
-2. [Methods](#methods)
-3. [Presets](#presets)
-4.  [License](#license)<br>
+  - [Example](#example)
+  - [Table of Contents](#table-of-contents)
+  - [Methods](#methods)
+    - [.getTable()](#gettable)
+    - [.getConfig()](#getconfig)
+    - [.setConfig()](#setconfig)
+  - [Presets](#presets)
+    - [documentation](#documentation)
+    - [dynamicPackageSearch](#dynamicpackagesearch)
+    - [gemPackages](#gempackages)
+    - [gemPackagesCircleCi](#gempackagescircleci)
+    - [githubActivity](#githubactivity)
+    - [githubAdvanced](#githubadvanced)
+    - [githubMinimal](#githubminimal)
+    - [githubOverview](#githuboverview)
+    - [githubOverviewWithArticle](#githuboverviewwitharticle)
+    - [githubStats](#githubstats)
+    - [npmPackages](#npmpackages)
+    - [npmPackagesCircleCi](#npmpackagescircleci)
+  - [License](#license)
 
 
 ## Methods
