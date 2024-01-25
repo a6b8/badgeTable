@@ -50,10 +50,11 @@ const mds = Object
         acc['readme'] += table
         acc['readme'] += "\n\n"
 
-        acc['all'] += acc['readme']
+        // acc['all'] += acc['readme']
 
         acc['readme'] += implementation
 
+        acc['all'] += `### ${preset}\n`
         acc['all'] += `${v['description']}\n\n`
         acc['all'] += `**Required Keys:**\n`
         acc['all'] += v['validation']
