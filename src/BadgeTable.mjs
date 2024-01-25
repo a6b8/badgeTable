@@ -19,23 +19,57 @@ export class BadgeTable {
 
 
     constructor() {
-        this.setConfig( configImported, true )
+        this.setConfig( { 
+            'config': configImported, 
+            'init': true 
+        } )
 
         return true
     }
 
 
+/**
+ * Get the currently active configuration, including presets.
+ *
+ * This method returns the currently active configuration, which includes
+ * presets needed to generate a table. It can be used to retrieve the
+ * default configuration after auto-generation.
+ *
+ * @method
+ * @returns {Object} The currently active configuration.
+ */
+
     getConfig() {
         return this.#config
     }
 
+/**
+ * Get an array of available presets as strings.
+ *
+ * This method returns an array of strings containing all available presets.
+ *
+ * @method
+ * @returns {string[]} An array of available presets as strings.
+ */
 
     getPresets() {
         return Object.keys( this.#config['presets'] )
     }
 
+/**
+ * Adjust the configuration for generating tables and optionally initialize it.
+ *
+ * This method allows you to adjust the configuration, for example, to insert a custom template.
+ * To customize your configuration and create a custom table, please refer to [.setConfig()](#setconfig).
+ *
+ * @method
+ * @param {Object} options - Options for setting the configuration.
+ * @param {Object} options.config - The configuration to set for the function.
+ * @param {boolean} [options.init=false] - Whether to initialize the configuration (default is false).
+ * @returns {boolean} Returns true after successful configuration adjustment.
+*/
 
-    setConfig( config, init ) {
+    setConfig( { config, init=false } ) {
         const [ messages, comments ] = this.#validateSetConfig( { config, init } )
         printMessages( { messages, comments } )
 
@@ -63,6 +97,22 @@ export class BadgeTable {
         return this
     }
 
+
+/**
+ * Generate a desired table based on the provided options.
+ *
+ * This method generates a table based on the specified `preset` (string) and includes the specified `projects` (array).
+ *
+ * @method
+ * @param {Object} options - Options for generating the table.
+ * @param {string} options.preset - The preset to use for generating the table.
+ * @param {Array} options.projects - The projects to include in the table.
+ * @param {boolean} [options.sort=true] - Whether to sort the table (default is true).
+ * @param {boolean} [options.footer=true] - Whether to include a footer in the table (default is true).
+ * @param {boolean} [options.header=false] - Whether to include a header in the table (default is false).
+ * @returns {string} Returns the generated table in markdown format.
+ *
+*/
 
     getTable( { preset, projects, sort=true, footer=true, header=false } ) {
         const [ messages, comments ] = this.#validateGetTable( { preset, projects, sort, footer, header } )

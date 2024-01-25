@@ -67,8 +67,8 @@ This method generates the desired table. The form is determined by the `preset` 
 
 | Name          | Type    | Default | Description                                         | Required |
 | ------------- | ------- | ------- | --------------------------------------------------- | -------- |
-| preset        | Any     |         | The preset to use for generating the table.        | `true`   |
-| projects      | Any     |         | The projects to include in the table.              | `true`   |
+| preset        | String     |         | The preset to use for generating the table.        | `true`   |
+| projects      | Array of Objects     |         | The projects to include in the table.              | `true`   |
 | sort          | Boolean | `true`  | Whether to sort the table.                         | `false`  |
 | footer        | Boolean | `true`  | Whether to include a footer in the table.          | `false`  |
 | header        | Boolean | `false` | Whether to include a header in the table.          | `false`  |
