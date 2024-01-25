@@ -14,7 +14,7 @@ const cfg = {
         'final': './README.md'
     }
 }
-
+ 
 const mds = Object
     .entries( config['presets'] )
     .sort( ( a, b ) => a[ 0 ].localeCompare( b[ 0 ] ) )
