@@ -1,4 +1,4 @@
-![CircleCI](https://img.shields.io/circleci/build/github/a6b8/badgeTable/main)
+![CircleCI](https://img.shields.io/circleci/build/github/a6b8/badgeTable/main) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
 
 # Badge Table Generator
