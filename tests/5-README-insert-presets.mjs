@@ -15,7 +15,6 @@ const cfg = {
     }
 }
 
- 
 const mds = Object
     .entries( config['presets'] )
     .sort( ( a, b ) => a[ 0 ].localeCompare( b[ 0 ] ) )
