@@ -143,7 +143,7 @@ const markDown = btg
     .setConfig( yourConfig )
     // .getTable( { 'preset': 'githubMinimal', projects, sort } )
 ```
-
+ 
 **Returns**
 ```
 Boolean
