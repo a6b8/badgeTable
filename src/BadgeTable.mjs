@@ -132,7 +132,6 @@ export class BadgeTable {
                 const _self = keyPathBadge
                     .split( '__' )
                     .slice( -1 )[ 0 ]
-                
                 const badge = this.#keyPathToValue( { 'keyPath': keyPathBadge } )
                 const pattern = /<<[^>]+>>/g
                 const items = badge['struct']

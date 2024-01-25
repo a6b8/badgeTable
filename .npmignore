@@ -4,3 +4,4 @@ node_modules/
 tests
 .circleci
 nodemon.json
+README.txt

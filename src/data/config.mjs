@@ -86,6 +86,20 @@ export const configImported = {
                 [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
             ],
         },
+        'githubOverview': {
+            'headline': 'Github',
+            'description': 'Table for GitHub Statistics and Activity, including Total Stars, Total Commits, Tests, and License.',
+            'validation': [ 'title', 'githubUserName', 'githubRepository' ],
+            'structs': [ 
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubStars', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubIssues', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubCommits', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__continiousIntegration', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
+            ],
+        },
         'githubAdvanced': {
             'headline': 'Github',
             'description': 'Table for GitHub Statistics and Activity, including Total Stars, Total Commits, Total Contributors, Total File Size, Total File Count, and License.',
@@ -163,6 +177,10 @@ export const configImported = {
             'headline': 'Commits',
             'row': [ 'tree__badges__githubCommits' ]
         },
+        'githubIssues': {
+            'headline': 'Issues',
+            'row': [ 'tree__badges__gitHubIssuesOpen', 'tree__badges__gitHubIssuesClosed' ]
+        },
         'githubContributors': {
             'headline': 'Contributors',
             'row': [ 'tree__badges__githubContributors' ]
@@ -222,6 +240,16 @@ export const configImported = {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
             'wrapperUrl': 'https://api.github.com/repos/{{githubUserName}}/{{githubRepository}}',
             'shield': 'https://img.shields.io/github/last-commit/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
+        },
+        'gitHubIssuesClosed': {
+            'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
+            'wrapperUrl': 'https://api.github.com/repos/{{githubUserName}}/{{githubRepository}}',
+            'shield': 'https://img.shields.io/github/issues-closed/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
+        },
+        'gitHubIssuesOpen': {
+            'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
+            'wrapperUrl': 'https://api.github.com/repos/{{githubUserName}}/{{githubRepository}}',
+            'shield': 'https://img.shields.io/github/issues/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
         },
         'circleCiBuild': {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
