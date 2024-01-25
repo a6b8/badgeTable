@@ -37,9 +37,6 @@ const mds = Object
 
         const payload = { preset, projects }
 
-
-
-        
         acc['readme'] += `### ${preset}\n`
         const modPayload = { ...payload, 'footer': false }
 

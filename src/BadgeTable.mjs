@@ -11,6 +11,7 @@
  
 
 import { configImported } from './data/config.mjs'
+import { printMessages } from './helpers/mixed.mjs'
 
 
 export class BadgeTable {
@@ -31,7 +32,15 @@ export class BadgeTable {
     }
 
 
+    getPresets() {
+        return Object.keys( this.#config['presets'] )
+    }
+
+
     setConfig( config, init ) {
+        const [ messages, comments ] = this.#validateSetConfig( { config, init } )
+        printMessages( { messages, comments } )
+
         if( config !== undefined ) {
             if( init !== true ) {
                 console.log( `Set custom config!` )
@@ -73,7 +82,6 @@ export class BadgeTable {
                 }
                 return project
             } )
-
 
         let table = []
 
@@ -235,41 +243,45 @@ export class BadgeTable {
         const messages = []
         const comments = []
 
-        if( typeof sort !== 'boolean' ) {
-            comments.push( `Key "sort" is not of type boolean. Value "${sort}" will ignored.` )
+        const validPresets = this.getPresets()
+        if( preset === undefined ) {
+            messages.push( `Key "projects" is type of "undefined".` )
+        } else if( !validPresets.includes( preset ) ) {
+            messages.push( `Key "preset" with the value ${preset} is not known. Choose from ${ validPresets.map( a => `'${a}'`).join( ', ' ) } instead.` )
         }
 
-        const knownKeys = Object.keys( this.#config['presets'] )
-        if( !knownKeys.includes( preset ) ) {
-            const error = `Key "preset" with the value ${preset} is not known. Use ${JSON.stringify( knownKeys )} instead.`
-            console.log( error )
-            process.exit( 1 )
-            // messages.push( error )
+        if( projects === undefined ) {
+            messages.push( `Key "projects" is type of "undefined".` )
+        } else if( !Array.isArray( projects ) ) {
+            messages.push( `Key "projects" is not type of "array".` )
+        } else {
+            projects
+                .forEach( ( project, index ) => {
+                    const n = this.#config['presets'][ preset ]['validation']
+                        .forEach( ( key ) => {
+                            if( !project.hasOwnProperty( key ) ) {
+                                messages.push( `Index [${index}] Key "${key}" is missing.` )
+                            }
+
+                            if( typeof project[ key ] !== 'string' ) {
+                                messages.push( `Index [${index}] Key "${key}" is not type "string".` )
+                            }
+                        } )
+                    return true
+                } )
         }
 
-        projects
-            .forEach( ( project, index ) => {
-                const n = this.#config['presets'][ preset ]['validation']
-                    .forEach( ( key ) => {
-                        if( !project.hasOwnProperty( key ) ) {
-                            messages.push( `Index [${index}] Key "${key}" is missing.` )
-                        }
-
-                        if( typeof project[ key ] !== 'string' ) {
-                            messages.push( `Index [${index}] Key "${key}" is not type "string".` )
-                        }
-                    } )
-                return true
-            } )
-
-        const n = [
-            [ 'header', header ],
-            [ 'footer', footer ]
+        const tmp = [
+            [ sort, 'sort' ],
+            [ footer, 'footer' ],
+            [ header, 'header' ]
         ]
             .forEach( a => {
-                const [ key, value ] = a
-                if (typeof value !== 'boolean' ) {
-                    messages.push( `Key '${key}' is not type of 'boolean'.` )
+                const [ value, key ] = a
+                if( value === undefined ) {
+                    messages.push( `Key "${key}" is type of "undefined".` )
+                } else if( typeof value !== 'boolean' ) {
+                    messages.push( `Key "${key}" is not type of "boolean".` )
                 }
             } )
 
@@ -324,5 +336,36 @@ export class BadgeTable {
             }, this.#config )
     
         return result
+    }
+
+
+    #validateSetConfig( { config, init } ) {
+        const messages = []
+        const comments = []
+
+        if( init === undefined ) {
+            messages.push( `Key 'init' is type of 'undefined'.`)
+        } else if( typeof init !== 'boolean' ) {
+            messages.push( `Key 'init' is not type of 'boolean'.` )
+        }
+
+        if( config === undefined ) {
+            messages.push( `Key 'config' is type of 'undefined'.`)
+        } else if( typeof config !== 'object' ) {
+            messages.push( `Key 'config' is not type of 'object'.` )
+        } 
+
+        if( messages.length !== 0 ) {
+            return [ messages, comments ]
+        }
+
+        const tmp = this.getPresets()
+            .forEach( key => {
+                if( !Object.hasOwn( config, key ) ) {
+                    messages.push( `Key "${key}" is missing.` )
+                }
+            } )
+
+        return [ messages, comments ]
     }
 }

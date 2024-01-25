@@ -94,8 +94,23 @@ export const configImported = {
                 [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubStars', 'tree__markdown__alignment__left' ],
-                [ 'tree__columns__githubIssues', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubCommits', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubIssues', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__continiousIntegration', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
+            ],
+        },
+        'githubOverviewWithArticle': {
+            'headline': 'Github',
+            'description': 'Table for GitHub Statistics and Activity, including Total Stars, Total Commits, Tests, and License.',
+            'validation': [ 'title', 'githubUserName', 'githubRepository' ],
+            'structs': [ 
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__article', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubStars', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubCommits', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubIssues', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__continiousIntegration', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
             ],
@@ -148,6 +163,10 @@ export const configImported = {
         'url': {
             'headline': 'Url',
             'row': [ 'tree__badges__textUrl' ],
+        },
+        'article': {
+            'headline': 'Article',
+            'row': [ 'tree__badges__articleUrl' ],
         },
         'gemVersion': {
             'headline': 'Version',
@@ -221,6 +240,11 @@ export const configImported = {
             'wrapperUrl': '{{url}}',
             'shield': ''
         },
+        'articleUrl': {
+            'struct': '<<markdownUrlX>>',
+            'wrapperUrl': '{{url}}',
+            'shield': ''
+        },
         'textImage': {
             'struct':'<<wrapperUrl>><<image>><</wrapperUrl>>',
             'wrapperUrl': '{{tree__links__githubRepository}}',
@@ -243,12 +267,12 @@ export const configImported = {
         },
         'gitHubIssuesClosed': {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
-            'wrapperUrl': 'https://api.github.com/repos/{{githubUserName}}/{{githubRepository}}',
+            'wrapperUrl': '{{tree__links__githubIssues}}',
             'shield': 'https://img.shields.io/github/issues-closed/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
         },
         'gitHubIssuesOpen': {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
-            'wrapperUrl': 'https://api.github.com/repos/{{githubUserName}}/{{githubRepository}}',
+            'wrapperUrl': '{{tree__links__githubIssues}}',
             'shield': 'https://img.shields.io/github/issues/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
         },
         'circleCiBuild': {
@@ -324,7 +348,8 @@ export const configImported = {
         'githubLicense': 'https://github.com/{{githubUserName}}/{{githubRepository}}/blob/{{githubBranch}}/LICENSE',
         'githubRepository': 'https://github.com/{{githubUserName}}/{{githubRepository}}',
         'githubTraffic': 'https://github.com/{{githubUserName}}/{{githubRepository}}/graphs/traffic',
-        'githubCommits': 'https://github.com/{{githubUserName}}/{{githubRepository}}/commit/{{githubBranch}}',
+        'githubCommits': 'https://github.com/{{githubUserName}}/{{githubRepository}}/commits/{{githubBranch}}',
+        'githubIssues': 'https://github.com/{{githubUserName}}/{{githubRepository}}/issues/{{githubBranch}}',
         'githubContributors': 'https://github.com/{{githubUserName}}/{{githubRepository}}/graphs/contributors',
         'githubRepositoryStars': 'https://github.com/{{githubUserName}}/{{githubRepository}}/stargazers'
     },

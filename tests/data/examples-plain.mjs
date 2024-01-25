@@ -4,7 +4,8 @@ export const repositories = [
         'packageName': 'badgetable',
         'githubUserName': 'a6b8',
         'githubRepository': 'badgeTable',
-        'tags': [ 'npm', 'git' ]
+        'tags': [ 'npm', 'git' ],
+        'url': 'https://medium.com/@a6b8/badge-table-1c3b1c0e0c0d',
     },
     {
         'title': 'Ethereum Sanction Check',
