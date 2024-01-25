@@ -179,7 +179,7 @@ export const configImported = {
         },
         'githubIssues': {
             'headline': 'Issues',
-            'row': [ 'tree__badges__gitHubIssuesOpen', 'tree__badges__gitHubIssuesClosed' ]
+            'row': [ 'tree__badges__gitHubIssuesOpen', /*'tree__badges__gitHubIssuesClosed'*/ ]
         },
         'githubContributors': {
             'headline': 'Contributors',
