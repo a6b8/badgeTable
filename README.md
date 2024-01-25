@@ -3,15 +3,6 @@
 
 # Badge Table Generator
 
-```
-    ____            __         ______      __    __   
-   / __ )____ _____/ /___ ____/_  __/___ _/ /_  / /__ 
-  / __  / __ `/ __  / __ `/ _ \/ / / __ `/ __ \/ / _ \
- / /_/ / /_/ / /_/ / /_/ /  __/ / / /_/ / /_/ / /  __/
-/_____/\__,_/\__,_/\__, /\___/_/  \__,_/_.___/_/\___/ 
-                  /____/                              
-```
-
 Helps create summary tables for modules and websites by adding badges through shields.io. It generates complex Markdown code with a simple payload for an easy-to-understand visual overview.
 
 Features:
