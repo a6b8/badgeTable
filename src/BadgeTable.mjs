@@ -68,7 +68,7 @@ export class BadgeTable {
 
     getTable( { preset, projects, sort=true, footer=true, header=false } ) {
         const [ messages, comments ] = this.#validateGetTable( { preset, projects, sort, footer, header } )
-        this.#printValidation( { messages, comments } )
+        printMessages( { messages, comments } )
 
         if( sort === true ) {
             projects = projects
@@ -289,30 +289,6 @@ export class BadgeTable {
     }
 
 
-    #printValidation( { messages, comments } ) {
-        comments
-            .forEach( ( msg ) => {
-                console.log( `${msg}`)
-            })
-
-
-        messages
-            .forEach( ( msg, index, all ) => {
-                if( index === 0 ) {
-                    console.log( `Following Error${all.length > 1 ? 's': ''}: `)
-                }
-
-                console.log( `  - ${msg}`)
-
-                if( all.length - 1 === index ) {
-                    process.exit( 1 )
-                } 
-            } )
-
-        return true
-    }
-
-
     #keyPathToValue( { keyPath, separator='__' } ) {
         if( typeof keyPath !== 'string' ) {
             console.log( `KeyPath is not type string` )
@@ -359,7 +335,8 @@ export class BadgeTable {
             return [ messages, comments ]
         }
 
-        const tmp = this.getPresets()
+        const tmp = Object
+            .keys( configImported )
             .forEach( key => {
                 if( !Object.hasOwn( config, key ) ) {
                     messages.push( `Key "${key}" is missing.` )

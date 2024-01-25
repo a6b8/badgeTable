@@ -1,4 +1,3 @@
-import fs from 'fs'
 import { BadgeTable } from '../src/BadgeTable.mjs'
 import { examples } from './data/examples.mjs'
 import crypto from 'crypto'
