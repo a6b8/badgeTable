@@ -14,6 +14,12 @@
 
 Helps create summary tables for modules and websites by adding badges through shields.io. It generates complex Markdown code with a simple payload for an easy-to-understand visual overview.
 
+Features:
+- Creates an overview in the form of a `markdown` table.
+- Users can choose from various predefined `presets`.
+- Dynamic information can be inserted into individual cells using, for example, `shields.io` badges.
+- Customized to meet the needs of open-source repository maintainers. To efficiently monitor metrics from various repositories.
+
 
 ## Example
 

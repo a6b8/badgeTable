@@ -7,7 +7,7 @@ const config = bt.getConfig()
 
 
 const cfg = {
-    'example': 'npmPackagesCircleCi',
+    'example': 'githubOverviewWithArticle',
     'test': './tests/results/presets.md',
     'readme': {
         'template': './README.txt',
@@ -81,4 +81,5 @@ const tmp = fs.readFileSync( cfg['readme']['template'], 'utf-8' )
 const readme = tmp
     .replace( '{{INSERT_PRESETS}}', mds['readme'] )
     .replace( '{{INSERT_EXAMPLE}}', mds['example'] )
+
 fs.writeFileSync( cfg['readme']['final'], readme, 'utf-8' )

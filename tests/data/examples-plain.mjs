@@ -4,8 +4,8 @@ export const repositories = [
         'packageName': 'badgetable',
         'githubUserName': 'a6b8',
         'githubRepository': 'badgeTable',
-        'tags': [ 'npm', 'git' ],
-        'url': 'https://medium.com/@a6b8/badge-table-1c3b1c0e0c0d',
+        'tags': [ 'npm', 'git', 'art' ],
+        'url': 'https://dedeed',
     },
     {
         'title': 'Ethereum Sanction Check',
@@ -84,6 +84,7 @@ export const repositories = [
         'packageName': 'ascii_to_svg',
         'githubUserName': 'a6b8',
         'githubRepository': 'ascii-to-svg-generator-for-ruby',
+        'url': '',
         'tags': [ 'gem', 'git' ]
     },
     {

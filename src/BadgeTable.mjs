@@ -16,11 +16,9 @@ import { printMessages } from './helpers/mixed.mjs'
 
 export class BadgeTable {
     #config
-    #debug
 
 
-    constructor( debug ) {
-        this.#debug = debug
+    constructor() {
         this.setConfig( configImported, true )
 
         return true
@@ -95,9 +93,11 @@ export class BadgeTable {
         this.#generateHeadline( { headlines } )
             .forEach( row => table.push( row ) )
 
-        const row = this.#config['presets'][ preset ]['structs']
+        const rows = this.#config['presets'][ preset ]['structs']
             .map( a => a[ 0 ] )
-        this.#generateRows( { row, projects } )
+
+
+        this.#generateRows( { preset, rows, projects } )
             .forEach( row => table.push( row ) )
 
         if( footer ) {
@@ -109,20 +109,20 @@ export class BadgeTable {
     }
 
 
-    #generateRows( { row, projects } ) {
+    #generateRows( { preset, rows, projects } ) {
         const lines = projects
-            .map( ( project ) => this.#generateRow( { row, project } ) )
+            .map( ( project ) => this.#generateRow( { preset, rows, project } ) )
 
         return lines
     }
 
 
-    #generateRow( { row, project } ) {
-        const line = row
+    #generateRow( { preset, rows, project } ) {
+        const line = rows
             .map( ( keyPath, index, all )  => {
                 let str = ''
                 str += ( index === 0 ) ? '| ' : ''
-                str += this.#generateCell( { keyPath, project } )
+                str += this.#generateCell( { preset, keyPath, project } )
                 str += ( all.length -1 === index ) ? ' |' : ''
                 return str
             } )
@@ -132,7 +132,7 @@ export class BadgeTable {
     }
 
 
-    #generateCell( { keyPath, project } ) {
+    #generateCell( { preset, keyPath, project } ) {
         const badges = this.#keyPathToValue( { keyPath } )['row']
 
         const strs = badges
@@ -158,22 +158,26 @@ export class BadgeTable {
                             const htmls = this.#keyPathToValue( { 'keyPath': search } )
                             const html = htmls[ close ? 1 : 0 ]
 
-                            const txt = this.#injectParameters( {
+                            let [ txt, valueIsEmpty ] = this.#injectParameters( {
                                 'str': html,
                                 'project': project,
                                 '_self': _self
                             } )
 
+                            if( valueIsEmpty ) {
+                                txt = ''
+                            }
+
                             return txt
                         } )
                         .join( '' )
                 } else {
-                    str = this.#injectParameters( {
+                    const [ t, valueIsEmpty ] = this.#injectParameters( {
                         'str': badge['struct'],
                         'project': project,
                         '_self': _self
                     } )
-                    
+                    str = t
                 }
 
                 return str
@@ -184,7 +188,7 @@ export class BadgeTable {
     }
 
 
-    #injectParameters( { str, project, _self, iteration=0 } ) {
+    #injectParameters( { str, project, _self, iteration=0, valueIsEmpty=false } ) {
         if( iteration === 2 ) {
             // return str
         }
@@ -192,7 +196,7 @@ export class BadgeTable {
         const pattern = /{{[^{}]+}}/g;
         const matches = str.match( pattern )
         if( matches === null ) {
-            return str
+            return [ str, valueIsEmpty ]
         }
 
         matches
@@ -209,13 +213,17 @@ export class BadgeTable {
                     value = project[ key ]
                 }
 
+                if( value === '' ) {
+                    valueIsEmpty = true
+                }
+
                 str = str.replace( match, value )
             } )
 
         iteration++
-        const result = this.#injectParameters( { str, project, _self, iteration } )
+        const [ result, _valueIsEmpty ] = this.#injectParameters( { str, project, _self, iteration, valueIsEmpty } )
 
-        return result
+        return [ result, _valueIsEmpty ]
     }
 
 
@@ -245,15 +253,17 @@ export class BadgeTable {
 
         const validPresets = this.getPresets()
         if( preset === undefined ) {
-            messages.push( `Key "projects" is type of "undefined".` )
-        } else if( !validPresets.includes( preset ) ) {
-            messages.push( `Key "preset" with the value ${preset} is not known. Choose from ${ validPresets.map( a => `'${a}'`).join( ', ' ) } instead.` )
+            messages.push( `Key 'projects' is type of 'undefined'.` )
+        } else if( typeof preset !== 'string' ) {
+            messages.push( `Key 'projects' is not type of 'string'.` )
+        }  else if( !validPresets.includes( preset ) ) {
+            messages.push( `Key 'preset' with the value ${preset} is not known. Choose from ${ validPresets.map( a => `'${a}'`).join( ', ' ) } instead.` )
         }
 
         if( projects === undefined ) {
-            messages.push( `Key "projects" is type of "undefined".` )
+            messages.push( `Key 'projects' is type of 'undefined'.` )
         } else if( !Array.isArray( projects ) ) {
-            messages.push( `Key "projects" is not type of "array".` )
+            messages.push( `Key 'projects' is not type of 'array'.` )
         } else {
             projects
                 .forEach( ( project, index ) => {
@@ -279,9 +289,9 @@ export class BadgeTable {
             .forEach( a => {
                 const [ value, key ] = a
                 if( value === undefined ) {
-                    messages.push( `Key "${key}" is type of "undefined".` )
+                    messages.push( `Key '${key}' is type of 'undefined'.` )
                 } else if( typeof value !== 'boolean' ) {
-                    messages.push( `Key "${key}" is not type of "boolean".` )
+                    messages.push( `Key '${key}' is not type of 'boolean'.` )
                 }
             } )
 
@@ -339,7 +349,7 @@ export class BadgeTable {
             .keys( configImported )
             .forEach( key => {
                 if( !Object.hasOwn( config, key ) ) {
-                    messages.push( `Key "${key}" is missing.` )
+                    messages.push( `In 'config' the key '${key}' is missing.` )
                 }
             } )
 

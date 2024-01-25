@@ -103,7 +103,7 @@ export const configImported = {
         'githubOverviewWithArticle': {
             'headline': 'Github',
             'description': 'Table for GitHub Statistics and Activity, including Total Stars, Total Commits, Tests, and License.',
-            'validation': [ 'title', 'githubUserName', 'githubRepository' ],
+            'validation': [ 'title', 'githubUserName', 'githubRepository', 'url' ],
             'structs': [ 
                 [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__article', 'tree__markdown__alignment__left' ],
