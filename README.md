@@ -37,6 +37,7 @@ See [#presets](#presets) for more examples.
   - [Table of Contents](#table-of-contents)
   - [Methods](#methods)
     - [.getTable()](#gettable)
+    - [.getPresets()](#getpresets)
     - [.getConfig()](#getconfig)
     - [.setConfig()](#setconfig)
   - [Presets](#presets)
@@ -57,7 +58,7 @@ See [#presets](#presets) for more examples.
 
 ## Methods
 
-The module contains only two methods: `.getTable()` and `.setConfig()`.
+The following methods are publicly accessible. `getTable` generates the actual table, while all other methods assist in displaying manually created tables.
 
 ```
 npm init -y
@@ -66,33 +67,70 @@ npm i badgetable
 
 ### .getTable()
 
-```.getTable( { preset, projects, sort } )```
+This method generates the desired table. The form is determined by the `preset` parameter.
 
-Table for `"preset"`:
+**Method**
+```.getTable( { preset, projects, sort=true, footer=true, header=false } )```
 
-| Key      | Type                | Required | Default |
-|----------|---------------------|----------|---------|
-| preset   | String              | `true`   |         |
-| projects | Array of objects    | `true`   |         |
-| sort     | Boolean             | `false`  |  `true` |
-| footer   | Boolean             | `false`  |  `true` |
-| sort     | Boolean             | `false`  |  `false`|
+| Name          | Type    | Default | Description                                         | Required |
+| ------------- | ------- | ------- | --------------------------------------------------- | -------- |
+| preset        | Any     |         | The preset to use for generating the table.        | `true`   |
+| projects      | Any     |         | The projects to include in the table.              | `true`   |
+| sort          | Boolean | `true`  | Whether to sort the table.                         | `false`  |
+| footer        | Boolean | `true`  | Whether to include a footer in the table.          | `false`  |
+| header        | Boolean | `false` | Whether to include a header in the table.          | `false`  |
+
+See [Presets](#presets) for examples.
+
+**Returns**
+```String (markdown)```
 
 
-As default following keys are possible "npmPackages", "gemPackages" for "presets". To customize the output use [.setConfig() ](#setConfig())
+### .getPresets()
+
+This helper method returns an array of strings containing all available `presets`.
+
+**Method**
+```
+getPresets()
+```
+
+**Return**
+```
+Array of Strings
+```
 
 
 ### .getConfig()
 
+This method returns the currently active configuration. This object also contains the respective presets needed to generate a table. To create a custom table, see [.setConfig()](#setconfig).
+
+**Method**
 ```.getConfig()```
+
+**Returns**
+```Object```
+
 
 Retrieve the default configuration after auto-generation. This can be useful if you want to create your custom configuration.
 
 
 ### .setConfig()
 
-```.getConfig( { config } )```
+This method allows you to adjust the configuration, for example, to insert your custom template.
 
+> Contribution welcome, we are happy to expand the standard presets. Please send us your suggestions.
+
+**Method**
+```.setConfig( { config, init=false } ) ```
+
+| Name          | Type    | Default | Description                                         | Required |
+| ------------- | ------- | ------- | --------------------------------------------------- | -------- |
+| config        | Object     |         | The configuration to set for the function.          | `true`   |
+| init          | Boolean | `false` | Do not provide this parameter.           | `false`  |
+
+
+**Example**
 To customize your configuration, you can provide your own config. It is recommended to modify the [default configuration](https://github.com/a6b8/BadgeTable/blob/main/src/data/config.mjs). The configuration distinguishes between `Badges`, `Columns`, and `Presets`. Within `Badges`, each badge is defined using a `struct`. The `wrapperUrl` can be used to create a clickable link, and the `shield` represents the actual badge content. The `struct` expects pseudo-HTML enclosed in "<<" and ">>". Variables within the payload are denoted by "{{" and "}}".
 
 ```js
@@ -111,7 +149,11 @@ myconfig['presets']['githubMinimal']['struct'] = [
 const markDown = btg
     .setConfig( yourConfig )
     // .getTable( { 'preset': 'githubMinimal', projects, sort } )
+```
 
+**Returns**
+```
+Boolean
 ```
 
 ## Presets

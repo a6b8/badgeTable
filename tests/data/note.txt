@@ -1,57 +1,8 @@
-![CircleCI](https://img.shields.io/circleci/build/github/a6b8/badgeTable/main) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
-
-
-# Badge Table Generator
-
-Helps create summary tables for modules and websites by adding badges through shields.io. It generates complex Markdown code with a simple payload for an easy-to-understand visual overview.
-
-Features:
-- Creates an overview in the form of a `markdown` table.
-- Users can choose from various predefined `presets`.
-- Dynamic information can be inserted into individual cells using, for example, `shields.io` badges.
-- Customized to meet the needs of open-source repository maintainers. To efficiently monitor metrics from various repositories.
-
-```
-npm init -y
-npm i badgetable
-```
-
-
-## Example
-
-{{INSERT_EXAMPLE}}
-
-See [#presets](#presets) for more examples.
-
-
-## Table of Contents
-
-  - [Example](#example)
-  - [Table of Contents](#table-of-contents)
-  - [Methods](#methods)
-    - [.getTable()](#gettable)
-    - [.getPresets()](#getpresets)
-    - [.getConfig()](#getconfig)
-    - [.setConfig()](#setconfig)
-  - [Presets](#presets)
-    - [documentation](#documentation)
-    - [dynamicPackageSearch](#dynamicpackagesearch)
-    - [gemPackages](#gempackages)
-    - [gemPackagesCircleCi](#gempackagescircleci)
-    - [githubActivity](#githubactivity)
-    - [githubAdvanced](#githubadvanced)
-    - [githubMinimal](#githubminimal)
-    - [githubOverview](#githuboverview)
-    - [githubOverviewWithArticle](#githuboverviewwitharticle)
-    - [githubStats](#githubstats)
-    - [npmPackages](#npmpackages)
-    - [npmPackagesCircleCi](#npmpackagescircleci)
-  - [License](#license)
-
-
 ## Methods
 
-The following methods are publicly accessible. `getTable` generates the actual table, while all other methods assist in displaying manually created tables.
+Folgende Methoden sind öffentlich aufrufbar. Dabei erstellt `getTable` die eigentliche Tabelle. Alle weiteren Methoden helfen, manuell erstelle Tabellen anzuzeigen.
+
+
 
 ```
 npm init -y
@@ -60,7 +11,8 @@ npm i badgetable
 
 ### .getTable()
 
-This method generates the desired table. The form is determined by the `preset` parameter.
+Diese Methode gibt eine gewünschte Tabelle aus. Die Form wird über den Parameter `preset` bestimmt. 
+
 
 **Method**
 ```.getTable( { preset, projects, sort=true, footer=true, header=false } )```
@@ -81,7 +33,7 @@ See [Presets](#presets) for examples.
 
 ### .getPresets()
 
-This helper method returns an array of strings containing all available `presets`.
+Die Helferemthode gibt als Array of Strings alle verfügbaren `presets` zurück
 
 **Method**
 ```
@@ -96,13 +48,14 @@ Array of Strings
 
 ### .getConfig()
 
-This method returns the currently active configuration. This object also contains the respective presets needed to generate a table. To create a custom table, see [.setConfig()](#setconfig).
+Diese Methode gibt die gerade aktive configuration zurück. In diesem Object sind auch die jeweiligen Presets abgelegt. Die es bedarf um ein Table zu generieren. Um ein custom table zu erstellen, siehe [.setConfig()](#setconfig).
+
 
 **Method**
 ```.getConfig()```
 
 **Returns**
-```Object```
+``Òbject```
 
 
 Retrieve the default configuration after auto-generation. This can be useful if you want to create your custom configuration.
@@ -110,9 +63,11 @@ Retrieve the default configuration after auto-generation. This can be useful if 
 
 ### .setConfig()
 
-This method allows you to adjust the configuration, for example, to insert your custom template.
+Mit dieser Methode wird es ermöglicht die configutration anzupassen um zum Besipiel eine einigenes TEmplate einzufügen. 
 
-> Contribution welcome, we are happy to expand the standard presets. Please send us your suggestions.
+> Contribution welcome, gerne erweitern wir die standard presets. Sendet gerne eure Vorschläge.
+
+
 
 **Method**
 ```.setConfig( { config, init=false } ) ```
@@ -142,18 +97,10 @@ myconfig['presets']['githubMinimal']['struct'] = [
 const markDown = btg
     .setConfig( yourConfig )
     // .getTable( { 'preset': 'githubMinimal', projects, sort } )
-```
 
 **Returns**
 ```
 Boolean
 ```
 
-## Presets
-
-{{INSERT_PRESETS}}
-
-
-## License
-
-The module is available as open source under the terms of the [MIT](https://github.com/a6b8/BadgeTable/blob/main/LICENSE).
+```
