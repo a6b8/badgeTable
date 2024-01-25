@@ -56,7 +56,7 @@ export class BadgeTable {
         return Object.keys( this.#config['presets'] )
     }
 
-/**
+/** 
  * Adjust the configuration for generating tables and optionally initialize it.
  *
  * This method allows you to adjust the configuration, for example, to insert a custom template.
