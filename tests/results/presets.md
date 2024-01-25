@@ -310,7 +310,7 @@ const values = {
             "title": "Badge Table",
             "githubUserName": "a6b8",
             "githubRepository": "badgeTable",
-            "url": "https://dedeed",
+            "url": "https://medium.com/@a6b8",
             "githubBranch": "main"
         }
     ]
