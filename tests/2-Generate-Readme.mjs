@@ -60,9 +60,9 @@ const mds = Object
                 return abb
             }, '' )
         acc['preset'] += `\n\n`
-        acc['preset'] += `**Example:**  \n`
+        acc['preset'] += `**Table:**  \n`
         acc['preset'] += table
-
+        acc['preset'] += `\n\n`
         acc['preset'] += `**Code:**  \n`
         acc['preset'] += `\`\`\`js\n`
         acc['preset'] += `import { BadgeTable } from 'badgetable'\n`
