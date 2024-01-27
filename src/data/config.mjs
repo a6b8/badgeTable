@@ -50,6 +50,20 @@ export const configImported = {
                 [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
             ]
         },
+        'npmPackagesCircleCiWithArticle': {
+            'headline': 'Npm Packages',
+            'description': 'Table for Node.js Packages with version number, latest update, total download numbers, license, and integration via CircleCI.', 
+            'validation': [ 'title', 'packageName', 'githubUserName', 'githubRepository', 'url' ],
+            'structs': [
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__article', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__npmVersion', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__npmStatistics', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__continiousIntegration', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
+            ]
+        },
         'documentation': {
             'headline': 'Documentation',
             'description': 'Table for displaying dedicated documentations with images, uptime status, and URLs.',

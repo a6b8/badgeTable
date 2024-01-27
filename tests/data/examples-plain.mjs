@@ -4,8 +4,8 @@ export const repositories = [
         'packageName': 'badgetable',
         'githubUserName': 'a6b8',
         'githubRepository': 'badgeTable',
-        'tags': [ 'npm', 'git', 'art' ],
         'url': 'https://medium.com/@a6b8',
+        'tags': [ 'npm', 'git', 'art' ]
     },
     {
         'title': 'Ethereum Sanction Check',
@@ -20,6 +20,7 @@ export const repositories = [
         'githubUserName': 'EasyMina',
         'githubRepository': 'easyMina',
         'jsonPath': 'dependencies.o1js',
+        'url': '',
         'tags': [ 'npm', 'dyn' ]
     },
     {
@@ -27,6 +28,7 @@ export const repositories = [
         'packageName': 'repo2file',
         'githubUserName': 'a6b8',
         'githubRepository': 'repo2file',
+        'url': '',
         'tags': [ 'npm' ]
     },
     {
@@ -35,6 +37,7 @@ export const repositories = [
         'githubUserName': 'EasyMina',
         'githubRepository': 'minaData',
         'jsonPath': 'dependencies.o1js',
+        'url': '',
         'tags': [ 'npm', 'dyn' ]
     },
     {
@@ -42,6 +45,7 @@ export const repositories = [
         'packageName': 'satnames',
         'githubUserName': 'a6b8',
         'githubRepository': 'satnames',
+        'url': '',
         'tags': [ 'npm' ]
     },
     {

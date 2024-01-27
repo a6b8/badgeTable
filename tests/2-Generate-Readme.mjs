@@ -8,7 +8,7 @@ const config = bt.getConfig()
 
 const cfg = {
     'example': 'githubOverviewWithArticle',
-    'test': './tests/results/presets.md',
+    'preset': './presets.md',
     'readme': {
         'template': './README.txt',
         'final': './README.md'
@@ -19,8 +19,8 @@ const mds = Object
     .entries( config['presets'] )
     .sort( ( a, b ) => a[ 0 ].localeCompare( b[ 0 ] ) )
     .reduce( ( acc, a, index ) => {
-        const [ preset, v ] = a
-        const { headline, validation, structs } = v
+        const [ preset, value ] = a
+        const { validation } = value
 
         const search = preset.substring( 0, 3 )
         const projects = repositories
@@ -40,7 +40,7 @@ const mds = Object
         const modPayload = { ...payload, 'footer': false }
 
         let table = bt.getTable( modPayload )
-        const implementation = `Implementation: [${cfg['test']}#${preset}](${cfg['test']}#${preset})\n\n`
+        const implementation = `Implementation: [${cfg['preset']}#${preset}](${cfg['preset']}#${preset})\n\n`
 
         if( cfg['example'] === preset ) {
             acc['example'] += table + "\n\n"
@@ -49,33 +49,31 @@ const mds = Object
 
         acc['readme'] += table
         acc['readme'] += "\n\n"
-
-        // acc['all'] += acc['readme']
-
         acc['readme'] += implementation
 
-        acc['all'] += `### ${preset}\n`
-        acc['all'] += `${v['description']}\n\n`
-        acc['all'] += `**Required Keys:**\n`
-        acc['all'] += v['validation']
+        acc['preset'] += `### ${preset}\n`
+        acc['preset'] += `${value['description']}\n\n`
+        acc['preset'] += `**Required Keys:**\n`
+        acc['preset'] += value['validation']
             .reduce( ( abb, b, rindex ) => {
                 abb += `- ${b}\n`
                 return abb
             }, '' )
-        acc['all'] += `\n\n`
+        acc['preset'] += `\n\n`
+        acc['preset'] += table
 
-        acc['all'] += `**Code:**\n`
-        acc['all'] += `\`\`\`js\n`
-        acc['all'] += `import { BadgeTable } from 'badgetable'\n`
-        acc['all'] += `const badgeTable = new BadgeTable()\n`
-        acc['all'] += `const values = ${JSON.stringify( payload, null, 4 )}\n`
-        acc['all'] += `badgeTable.getTable( values )\n`
-        acc['all'] += `\`\`\`\n\n`
+        acc['preset'] += `**Code:**\n`
+        acc['preset'] += `\`\`\`js\n`
+        acc['preset'] += `import { BadgeTable } from 'badgetable'\n`
+        acc['preset'] += `const badgeTable = new BadgeTable()\n`
+        acc['preset'] += `const values = ${JSON.stringify( payload, null, 4 )}\n`
+        acc['preset'] += `badgeTable.getTable( values )\n`
+        acc['preset'] += `\`\`\`\n\n`
 
         return acc
-    }, { 'readme': '', 'all': "# Presets\n\n", 'example': '' } )
+    }, { 'readme': '', 'preset': "# Presets\n\n", 'example': '' } )
 
-fs.writeFileSync( cfg['test'], mds['all'], 'utf-8' )
+fs.writeFileSync( cfg['preset'], mds['preset'], 'utf-8' )
 
 const tmp = fs.readFileSync( cfg['readme']['template'], 'utf-8' )
 const readme = tmp
