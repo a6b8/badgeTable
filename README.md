@@ -90,7 +90,7 @@ This helper method returns an array of strings containing all available `presets
 
 **Method**
 ```javascript
-getPresets()
+.getPresets()
 ```
 
 **Return**
@@ -155,6 +155,7 @@ const markDown = btg
 ```Boolean```
 
 ## Presets
+Here are all the presets listed as an overview. A detailed description for each example is stored in [./preset.md](./presets.md).
 
 ### documentation
 | Title | Uptime | Url |

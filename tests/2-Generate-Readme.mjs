@@ -10,7 +10,7 @@ const cfg = {
     'example': 'githubOverviewWithArticle',
     'preset': './presets.md',
     'readme': {
-        'template': './README.txt',
+        'template': './tests/data/README.txt',
         'final': './README.md'
     }
 }
