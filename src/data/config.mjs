@@ -363,7 +363,7 @@ export const configImported = {
         'githubRepository': 'https://github.com/{{githubUserName}}/{{githubRepository}}',
         'githubTraffic': 'https://github.com/{{githubUserName}}/{{githubRepository}}/graphs/traffic',
         'githubCommits': 'https://github.com/{{githubUserName}}/{{githubRepository}}/commits/{{githubBranch}}',
-        'githubIssues': 'https://github.com/{{githubUserName}}/{{githubRepository}}/issues/{{githubBranch}}',
+        'githubIssues': 'https://github.com/{{githubUserName}}/{{githubRepository}}/issues/',
         'githubContributors': 'https://github.com/{{githubUserName}}/{{githubRepository}}/graphs/contributors',
         'githubRepositoryStars': 'https://github.com/{{githubUserName}}/{{githubRepository}}/stargazers'
     },
