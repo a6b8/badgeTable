@@ -314,21 +314,6 @@ export class BadgeTable {
             messages.push( `Key 'projects' is type of 'undefined'.` )
         } else if( !Array.isArray( projects ) ) {
             messages.push( `Key 'projects' is not type of 'array'.` )
-        } else {
-            projects
-                .forEach( ( project, index ) => {
-                    const n = this.#config['presets'][ preset ]['validation']
-                        .forEach( ( key ) => {
-                            if( !project.hasOwnProperty( key ) ) {
-                                messages.push( `Index [${index}] Key "${key}" is missing.` )
-                            }
-
-                            if( typeof project[ key ] !== 'string' ) {
-                                messages.push( `Index [${index}] Key "${key}" is not type "string".` )
-                            }
-                        } )
-                    return true
-                } )
         }
 
         const tmp = [
@@ -343,6 +328,25 @@ export class BadgeTable {
                 } else if( typeof value !== 'boolean' ) {
                     messages.push( `Key '${key}' is not type of 'boolean'.` )
                 }
+            } )
+
+        if( messages.length !== 0 ) {
+            return [ messages, comments ]
+        }
+
+        projects
+            .forEach( ( project, index ) => {
+                const n = this.#config['presets'][ preset ]['validation']
+                    .forEach( ( key ) => {
+                        if( !project.hasOwnProperty( key ) ) {
+                            messages.push( `Index [${index}] Key "${key}" is missing.` )
+                        }
+
+                        if( typeof project[ key ] !== 'string' ) {
+                            messages.push( `Index [${index}] Key "${key}" is not type "string".` )
+                        }
+                    } )
+                return true
             } )
 
         return [ messages, comments ]
