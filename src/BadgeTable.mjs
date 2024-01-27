@@ -325,8 +325,10 @@ export class BadgeTable {
                 const [ value, key ] = a
                 if( value === undefined ) {
                     messages.push( `Key '${key}' is type of 'undefined'.` )
+                    return true
                 } else if( typeof value !== 'boolean' ) {
                     messages.push( `Key '${key}' is not type of 'boolean'.` )
+                    return true
                 }
             } )
 
@@ -340,10 +342,12 @@ export class BadgeTable {
                     .forEach( ( key ) => {
                         if( !project.hasOwnProperty( key ) ) {
                             messages.push( `Index [${index}] Key "${key}" is missing.` )
+                            return true
                         }
 
                         if( typeof project[ key ] !== 'string' ) {
                             messages.push( `Index [${index}] Key "${key}" is not type "string".` )
+                            return true
                         }
                     } )
                 return true
