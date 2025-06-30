@@ -4,6 +4,7 @@ export const repositories = [
         'packageName': 'badgetable',
         'githubUserName': 'a6b8',
         'githubRepository': 'badgeTable',
+        'githubWorkflowPath': 'test-on-release.yml',
         'url': 'https://medium.com/@a6b8',
         'tags': [ 'npm', 'git', 'art' ]
     },
@@ -12,6 +13,7 @@ export const repositories = [
         'packageName': 'ethereum-sanction-check',
         'githubUserName': 'a6b8',
         'githubRepository': 'ethereum-sanction-check-for-nodejs',
+        'githubWorkflowPath': 'test-on-release.yml',
         'tags': []
     },
     {
@@ -19,6 +21,7 @@ export const repositories = [
         'packageName': 'easymina',
         'githubUserName': 'EasyMina',
         'githubRepository': 'easyMina',
+        'githubWorkflowPath': 'test-on-release.yml',
         'jsonPath': 'dependencies.o1js',
         'url': '',
         'tags': [ 'npm', 'dyn' ]
@@ -28,6 +31,7 @@ export const repositories = [
         'packageName': 'repo2file',
         'githubUserName': 'a6b8',
         'githubRepository': 'repo2file',
+        'githubWorkflowPath': 'test-on-release.yml',
         'url': '',
         'tags': [ 'npm' ]
     },
@@ -36,6 +40,7 @@ export const repositories = [
         'packageName': 'minadata',
         'githubUserName': 'EasyMina',
         'githubRepository': 'minaData',
+        'githubWorkflowPath': 'test-on-release.yml',
         'jsonPath': 'dependencies.o1js',
         'url': '',
         'tags': [ 'npm', 'dyn' ]
@@ -45,6 +50,7 @@ export const repositories = [
         'packageName': 'satnames',
         'githubUserName': 'a6b8',
         'githubRepository': 'satnames',
+        'githubWorkflowPath': 'test-on-release.yml',
         'url': '',
         'tags': [ 'npm' ]
     },
@@ -53,6 +59,7 @@ export const repositories = [
         'packageName': 'masked_ape_club',
         'githubUserName': 'a6b8',
         'githubRepository': 'masked-ape-club-for-ruby',
+        'githubWorkflowPath': 'test-on-release.yml',
         'tags': [ 'gem' ]
     },
     {
@@ -60,6 +67,7 @@ export const repositories = [
         'packageName': 'feed_into',
         'githubUserName': 'a6b8',
         'githubRepository': 'feed-into-for-ruby',
+        'githubWorkflowPath': 'test-on-release.yml',
         'tags': [ 'gem' ]
     },
     {
@@ -67,6 +75,7 @@ export const repositories = [
         'packageName': 'console_hash_array',
         'githubUserName': 'a6b8',
         'githubRepository': 'console-hash-array-for-ruby',
+        'githubWorkflowPath': 'test-on-release.yml',
         'tags': [ 'gem' ]
     },
     {
@@ -74,6 +83,7 @@ export const repositories = [
         'packageName': 'write_invoice',
         'githubUserName': 'a6b8',
         'githubRepository': 'write-invoice-for-ruby',
+        'githubWorkflowPath': 'test-on-release.yml',
         'tags': [ 'gem' ]
     },
     {
@@ -81,13 +91,15 @@ export const repositories = [
         'packageName': 'statosio',
         'githubUserName': 'a6b8',
         'githubRepository': 'statosio-for-ruby',
+        'githubWorkflowPath': 'test-on-release.yml',
         'tags': [ 'gem' ]
     },
     {
         'title': 'Ascii to svg Generator',
         'packageName': 'ascii_to_svg',
-        'githubUserName': 'a6b8',
-        'githubRepository': 'ascii-to-svg-generator-for-ruby',
+        'githubUserName': 'flowmcp',
+        'githubRepository': 'flowmcp-core',
+        'githubWorkflowPath': 'test-on-release.yml',
         'url': '',
         'tags': [ 'gem', 'git' ]
     },
@@ -96,6 +108,7 @@ export const repositories = [
         'packageName': 'markdown_titles_to_svg',
         'githubUserName': 'a6b8',
         'githubRepository': 'markdown-titles-to-svg-for-ruby',
+        'githubWorkflowPath': 'test-on-release.yml',
         'tags': [ 'gem' ]
     },
     {
@@ -103,6 +116,7 @@ export const repositories = [
         'packageName': 'local_path_builder',
         'githubUserName': 'a6b8',
         'githubRepository': 'local-path-builder-for-ruby',
+        'githubWorkflowPath': 'test-on-release.yml',
         'tags': [ 'gem' ]
     },
     {
@@ -110,6 +124,7 @@ export const repositories = [
         'packageName': 'documents_with_footer_to_pdf',
         'githubUserName': 'a6b8',
         'githubRepository': 'documents-with-footer-to-pdf-for-ruby',
+        'githubWorkflowPath': 'test-on-release.yml',
         'tags': [ 'gem' ]
     },
     {
@@ -117,6 +132,7 @@ export const repositories = [
         'packageName': 'xml_tree_viewer',
         'githubUserName': 'a6b8',
         'githubRepository': 'xml-tree-viewer-for-ruby',
+        'githubWorkflowPath': 'test-on-release.yml',
         'tags': [ 'gem' ]
     },
     {
@@ -126,6 +142,7 @@ export const repositories = [
         'uptimeRobotId': 'm786809205-43089a21ef2cbf3c086bad86',
         'githubUserName': 'a6b8',
         'githubRepository': 'statosio-for-ruby',
+        'githubWorkflowPath': 'test-on-release.yml',
         'tags': [ 'doc' ]
     },
     {
@@ -135,6 +152,7 @@ export const repositories = [
         'uptimeRobotId': 'm790382405-ad7bffbdf0263dd6daec2d27',
         'githubUserName': 'a6b8',
         'githubRepository': 'write-invoice-for-ruby',
+        'githubWorkflowPath': 'test-on-release.yml',
         'tags': [ 'doc' ]
     }
 ]

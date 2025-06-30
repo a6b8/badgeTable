@@ -87,7 +87,7 @@ export const configImported = {
                 [ 'tree__columns__url', 'tree__markdown__alignment__left' ]
             ]
         },
-        'githubDetails': {
+        'githubDetailsCircleCi': {
             'headline': 'Developer Repository View',
             'description': null,
             'validation': [ 'title', 'githubUserName', 'githubRepository'],
@@ -96,6 +96,19 @@ export const configImported = {
                 [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubRelease', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__continiousIntegration', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubIssuesOpenAndClosed', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
+            ]
+        },
+        'githubDetails': {
+            'headline': 'Developer Repository View',
+            'description': null,
+            'validation': [ 'title', 'githubUserName', 'githubRepository', 'githubWorkflowPath' ],
+            'structs': [
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubRelease', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubWorkflow', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubIssuesOpenAndClosed', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
             ]
@@ -256,6 +269,10 @@ export const configImported = {
             'headline': 'Tests',
             'row': [ 'tree__badges__circleCiBuild' ]
         },
+        'githubWorkflow': {
+            'headline': 'Workflow',
+            'row': [ 'tree__badges__githubWorkflow' ]
+        },
         'gemStatistics': {
             'headline': 'Statistics',
             'row': [ 'tree__badges__gitHubRepositoryStars', 'tree__badges__gemDownloads' ]
@@ -325,7 +342,7 @@ export const configImported = {
         },
         'gitHubIssuesClosed': {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
-            'wrapperUrl': '{{tree__links__githubIssues}}',
+            'wrapperUrl': '{{tree__links__githubIssuesClosed}}',
             'shield': 'https://img.shields.io/github/issues-closed/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
         },
         'gitHubRelease': {
@@ -337,6 +354,11 @@ export const configImported = {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
             'wrapperUrl': '{{tree__links__githubRepository}}',
             'shield': 'https://img.shields.io/circleci/build/github/{{githubUserName}}/{{githubRepository}}?{{tree__styles__buildPassing__url}}'
+        },
+        'githubWorkflow': {
+            'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
+            'wrapperUrl': '{{tree__links__githubRepository}}',
+            'shield': 'https://img.shields.io/github/actions/workflow/status/{{githubUserName}}/{{githubRepository}}/{{githubWorkflowPath}}?{{tree__styles__buildPassing__url}}'
         },
         'snykVulnerabilities': {
             'struct': '<<shield>>',
@@ -408,6 +430,7 @@ export const configImported = {
         'githubTraffic': 'https://github.com/{{githubUserName}}/{{githubRepository}}/graphs/traffic',
         'githubCommits': 'https://github.com/{{githubUserName}}/{{githubRepository}}/commits/{{githubBranch}}',
         'githubIssues': 'https://github.com/{{githubUserName}}/{{githubRepository}}/issues/',
+        'githubIssuesClosed': 'https://github.com/{{githubUserName}}/{{githubRepository}}/issues?q=is:issue%20state:closed',
         'githubReleases': 'https://github.com/{{githubUserName}}/{{githubRepository}}/releases/',
         'githubContributors': 'https://github.com/{{githubUserName}}/{{githubRepository}}/graphs/contributors',
         'githubRepositoryStars': 'https://github.com/{{githubUserName}}/{{githubRepository}}/stargazers'

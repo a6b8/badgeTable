@@ -74,16 +74,18 @@ export const examples = {
                 'githubRepository': 'statosio-for-ruby'
             },
             {
-                'title': 'Ascii to svg Generator',
-                'packageName': 'ascii_to_svg',
-                'githubUserName': 'a6b8',
-                'githubRepository': 'ascii-to-svg-generator-for-ruby',
+                'title': 'FlownMCP (Core)',
+                'packageName': 'flowmcp-core',
+                'githubUserName': 'flowmcp',
+                'githubRepository': 'flowmcp-core',
+                'githubWorkflowPath': 'test-on-release.yml'
             },
             {
-                'title': 'Markdown Titles to svg',
-                'packageName': 'markdown_titles_to_svg',
-                'githubUserName': 'a6b8',
-                'githubRepository': 'markdown-titles-to-svg-for-ruby'
+                'title': 'FlowMCP (Servers)',
+                'packageName': 'flowmcp-servers',
+                'githubUserName': 'flowmcp',
+                'githubRepository': 'flowmcp-servers',
+                'githubWorkflowPath': 'test-on-release.yml'
             },
             {
                 'title': 'Local Path Builder',
