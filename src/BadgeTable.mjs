@@ -120,7 +120,9 @@ export class BadgeTable {
 
         if( sort === true ) {
             projects = projects
-                .sort( ( a, b ) => a.title.localeCompare( b.title ) )
+                .sort( ( a, b ) => {
+                    return  a.title.localeCompare( b.title )
+                } )
         }
 
         projects = projects

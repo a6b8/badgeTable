@@ -74,6 +74,32 @@ export const configImported = {
                 [ 'tree__columns__url', 'tree__markdown__alignment__left' ]
             ]
         },
+        'documentationRepository': {
+            'headline': 'Website Repository',
+            'description': 'Table for displaying website repositories with images, uptime status, GitHub repository details, and URLs.',
+            'validation': [ 'title', 'imageUrl', 'uptimeRobotId', 'githubUserName', 'githubRepository', 'url' ],
+            'structs': [
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__uptime', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubRelease', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__continiousIntegration', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__url', 'tree__markdown__alignment__left' ]
+            ]
+        },
+        'githubDetails': {
+            'headline': 'Developer Repository View',
+            'description': null,
+            'validation': [ 'title', 'githubUserName', 'githubRepository'],
+            'structs': [
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubRelease', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__continiousIntegration', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubIssuesOpenAndClosed', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
+            ]
+        },
         'githubStats': {
             'headline': 'Github',
             'description': 'Table for GitHub Statistics such as Stars, Total File Size, Total File Count, and License.',
@@ -210,9 +236,17 @@ export const configImported = {
             'headline': 'Commits',
             'row': [ 'tree__badges__githubCommits' ]
         },
+        'githubRelease': {
+            'headline': 'Release',
+            'row': [ 'tree__badges__gitHubRelease' ]
+        },
         'githubIssues': {
             'headline': 'Issues',
             'row': [ 'tree__badges__gitHubIssuesOpen' ]
+        },
+        'githubIssuesOpenAndClosed': {
+            'headline': 'Issues',
+            'row': [ 'tree__badges__gitHubIssuesOpen', 'tree__badges__gitHubIssuesClosed' ]
         },
         'githubContributors': {
             'headline': 'Contributors',
@@ -289,6 +323,16 @@ export const configImported = {
             'wrapperUrl': '{{tree__links__githubIssues}}',
             'shield': 'https://img.shields.io/github/issues/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
         },
+        'gitHubIssuesClosed': {
+            'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
+            'wrapperUrl': '{{tree__links__githubIssues}}',
+            'shield': 'https://img.shields.io/github/issues-closed/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
+        },
+        'gitHubRelease': {
+            'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
+            'wrapperUrl': '{{tree__links__githubReleases}}',
+            'shield': 'https://img.shields.io/github/v/release/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
+        },
         'circleCiBuild': {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
             'wrapperUrl': '{{tree__links__githubRepository}}',
@@ -364,6 +408,7 @@ export const configImported = {
         'githubTraffic': 'https://github.com/{{githubUserName}}/{{githubRepository}}/graphs/traffic',
         'githubCommits': 'https://github.com/{{githubUserName}}/{{githubRepository}}/commits/{{githubBranch}}',
         'githubIssues': 'https://github.com/{{githubUserName}}/{{githubRepository}}/issues/',
+        'githubReleases': 'https://github.com/{{githubUserName}}/{{githubRepository}}/releases/',
         'githubContributors': 'https://github.com/{{githubUserName}}/{{githubRepository}}/graphs/contributors',
         'githubRepositoryStars': 'https://github.com/{{githubUserName}}/{{githubRepository}}/stargazers'
     },
