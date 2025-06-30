@@ -357,7 +357,7 @@ export const configImported = {
         },
         'githubWorkflow': {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
-            'wrapperUrl': '{{tree__links__githubRepository}}',
+            'wrapperUrl': '{{tree__links__githubActions}}',
             'shield': 'https://img.shields.io/github/actions/workflow/status/{{githubUserName}}/{{githubRepository}}/{{githubWorkflowPath}}?{{tree__styles__buildPassing__url}}'
         },
         'snykVulnerabilities': {
@@ -431,6 +431,7 @@ export const configImported = {
         'githubCommits': 'https://github.com/{{githubUserName}}/{{githubRepository}}/commits/{{githubBranch}}',
         'githubIssues': 'https://github.com/{{githubUserName}}/{{githubRepository}}/issues/',
         'githubIssuesClosed': 'https://github.com/{{githubUserName}}/{{githubRepository}}/issues?q=is:issue%20state:closed',
+        'githubActions': 'https://github.com/{{githubUserName}}/{{githubRepository}}/actions',
         'githubReleases': 'https://github.com/{{githubUserName}}/{{githubRepository}}/releases/',
         'githubContributors': 'https://github.com/{{githubUserName}}/{{githubRepository}}/graphs/contributors',
         'githubRepositoryStars': 'https://github.com/{{githubUserName}}/{{githubRepository}}/stargazers'
