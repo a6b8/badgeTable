@@ -83,6 +83,19 @@ export const configImported = {
                 [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__uptime', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubRelease', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubWorkflow', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__url', 'tree__markdown__alignment__left' ]
+            ]
+        },
+        'documentationRepositoryCircleCi': {
+            'headline': 'Website Repository',
+            'description': 'Table for displaying website repositories with images, uptime status, GitHub repository details, and URLs.',
+            'validation': [ 'title', 'imageUrl', 'uptimeRobotId', 'githubUserName', 'githubRepository', 'url' ],
+            'structs': [
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__uptime', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubRelease', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__continiousIntegration', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__url', 'tree__markdown__alignment__left' ]
             ]
