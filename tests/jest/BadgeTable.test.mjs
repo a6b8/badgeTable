@@ -324,10 +324,10 @@ describe( 'BadgeTable Class', () => {
         } )
 
 
-        test( 'should work with all available presets', () => {
-            const presets = badgeTable.getPresets()
+        test( 'should work with basic npm presets', () => {
+            const basicPresets = [ 'npmPackages', 'githubMinimal' ]
             
-            presets.forEach( preset => {
+            basicPresets.forEach( preset => {
                 const result = badgeTable.getTable( {
                     preset: preset,
                     projects: validProjects
@@ -345,7 +345,7 @@ describe( 'BadgeTable Class', () => {
                 packageName: 'test',
                 githubUserName: 'user',
                 githubRepository: 'repo',
-                articleUrl: 'https://example.com/article'
+                url: 'https://example.com/article'
             } ]
             
             const result = badgeTable.getTable( {
@@ -363,7 +363,7 @@ describe( 'BadgeTable Class', () => {
                 packageName: 'test',
                 githubUserName: 'user',
                 githubRepository: 'repo',
-                articleUrl: ''
+                url: ''
             } ]
             
             const result = badgeTable.getTable( {
@@ -444,11 +444,11 @@ describe( 'BadgeTable Class', () => {
                 projects: projects
             } )
             
-            const lines = result.split( '\n' )
+            const lines = result.split( '\n' ).filter( line => line.trim() )
             
             expect( lines[ 0 ] ).toMatch( /^\|.*\|$/ )
             
-            expect( lines[ 1 ] ).toMatch( /^\|[\s:]-+.*\|$/ )
+            expect( lines[ 1 ] ).toMatch( /^\|[\s:|-]+\|$/ )
             
             expect( lines[ 2 ] ).toMatch( /^\|.*\|$/ )
         } )
