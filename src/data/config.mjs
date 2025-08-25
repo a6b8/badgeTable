@@ -126,6 +126,19 @@ export const configImported = {
                 [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
             ]
         },
+        'githubDetailsCodeCoverage': {
+            'headline': 'Developer Repository View',
+            'description': null,
+            'validation': [ 'title', 'githubUserName', 'githubRepository', 'githubWorkflowPath' ],
+            'structs': [
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubRelease', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubWorkflow', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubIssuesOpenAndClosed', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
+            ]
+        },
         'githubStats': {
             'headline': 'Github',
             'description': 'Table for GitHub Statistics such as Stars, Total File Size, Total File Count, and License.',
@@ -234,6 +247,10 @@ export const configImported = {
             'headline': 'Article',
             'row': [ 'tree__badges__articleUrl' ],
         },
+        'codeCoverage': {
+            'headline': 'Coverage',
+            'row': [ 'tree__badges__codeCoverage' ]
+        },
         'gemVersion': {
             'headline': 'Version',
             'row': [ 'tree__badges__gemVersion' ] 
@@ -327,6 +344,12 @@ export const configImported = {
             'struct':'<<wrapperUrl>><<image>><</wrapperUrl>>',
             'wrapperUrl': '{{tree__links__githubRepository}}',
             'shield': ''
+        },
+        'codeCoverage': {
+            'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
+            'wrapperUrl': '{{tree__links__codecov}}',
+            // 'shield': 'https://img.shields.io/github/actions/workflow/status/{{githubUserName}}/{{githubRepository}}/{{githubWorkflowPath}}?{{tree__styles__buildPassing__url}}',
+            'shield': 'https://img.shields.io/codecov/c/github/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
         },
         'gemVersion': {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
@@ -438,6 +461,7 @@ export const configImported = {
         'shield': [ '<img src="{{tree__badges__self__shield}}">', '' ]
     },
     'links': {
+        'codecov': 'https://app.codecov.io/gh/{{githubUserName}}/{{githubRepository}}',
         'githubLicense': 'https://github.com/{{githubUserName}}/{{githubRepository}}/blob/{{githubBranch}}/LICENSE',
         'githubRepository': 'https://github.com/{{githubUserName}}/{{githubRepository}}',
         'githubTraffic': 'https://github.com/{{githubUserName}}/{{githubRepository}}/graphs/traffic',

@@ -61,6 +61,54 @@ Table for displaying website repositories with images, uptime status, GitHub rep
 
 
 **Table:**  
+| Title | Updated | Uptime | Release | Workflow | Url |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| [Statosio](https://github.com/a6b8/statosio-for-ruby) | <a href="https://api.github.com/repos/a6b8/statosio-for-ruby"><img src="https://img.shields.io/github/last-commit/a6b8/statosio-for-ruby?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/statosio-for-ruby"><img src="https://shields.io/uptimerobot/status/m786809205-43089a21ef2cbf3c086bad86?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/statosio-for-ruby/releases/"><img src="https://img.shields.io/github/v/release/a6b8/statosio-for-ruby?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/statosio-for-ruby/actions"><img src="https://img.shields.io/github/actions/workflow/status/a6b8/statosio-for-ruby/undefined?logo=F3A966&logoColor=F3A966&style=flat&label="></a> | [https://docs.statosio.com/](https://docs.statosio.com/) |
+| [Write Invoice](https://github.com/a6b8/write-invoice-for-ruby) | <a href="https://api.github.com/repos/a6b8/write-invoice-for-ruby"><img src="https://img.shields.io/github/last-commit/a6b8/write-invoice-for-ruby?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/write-invoice-for-ruby"><img src="https://shields.io/uptimerobot/status/m790382405-ad7bffbdf0263dd6daec2d27?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/write-invoice-for-ruby/releases/"><img src="https://img.shields.io/github/v/release/a6b8/write-invoice-for-ruby?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/write-invoice-for-ruby/actions"><img src="https://img.shields.io/github/actions/workflow/status/a6b8/write-invoice-for-ruby/undefined?logo=F3A966&logoColor=F3A966&style=flat&label="></a> | [https://docs.statosio.com/](https://docs.statosio.com/) |
+
+**Code:**  
+```js
+import { BadgeTable } from 'badgetable'
+const badgeTable = new BadgeTable()
+const values = {
+    "preset": "documentationRepository",
+    "projects": [
+        {
+            "title": "Statosio",
+            "imageUrl": "https://docs.statosio.com/assets/images/statosio.png",
+            "uptimeRobotId": "m786809205-43089a21ef2cbf3c086bad86",
+            "githubUserName": "a6b8",
+            "githubRepository": "statosio-for-ruby",
+            "url": "https://docs.statosio.com/",
+            "githubBranch": "main"
+        },
+        {
+            "title": "Write Invoice",
+            "imageUrl": "https://docs.writeinvoice.com/assets/images/logo.png",
+            "uptimeRobotId": "m790382405-ad7bffbdf0263dd6daec2d27",
+            "githubUserName": "a6b8",
+            "githubRepository": "write-invoice-for-ruby",
+            "url": "https://docs.statosio.com/",
+            "githubBranch": "main"
+        }
+    ]
+}
+badgeTable.getTable( values )
+```
+
+### documentationRepositoryCircleCi
+Table for displaying website repositories with images, uptime status, GitHub repository details, and URLs.
+
+**Required Keys:**
+- title
+- imageUrl
+- uptimeRobotId
+- githubUserName
+- githubRepository
+- url
+
+
+**Table:**  
 | Title | Updated | Uptime | Release | Tests | Url |
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | [Statosio](https://github.com/a6b8/statosio-for-ruby) | <a href="https://api.github.com/repos/a6b8/statosio-for-ruby"><img src="https://img.shields.io/github/last-commit/a6b8/statosio-for-ruby?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/statosio-for-ruby"><img src="https://shields.io/uptimerobot/status/m786809205-43089a21ef2cbf3c086bad86?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/statosio-for-ruby/releases/"><img src="https://img.shields.io/github/v/release/a6b8/statosio-for-ruby?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/statosio-for-ruby"><img src="https://img.shields.io/circleci/build/github/a6b8/statosio-for-ruby?logo=F3A966&logoColor=F3A966&style=flat&label="></a> | [https://docs.statosio.com/](https://docs.statosio.com/) |
@@ -71,7 +119,7 @@ Table for displaying website repositories with images, uptime status, GitHub rep
 import { BadgeTable } from 'badgetable'
 const badgeTable = new BadgeTable()
 const values = {
-    "preset": "documentationRepository",
+    "preset": "documentationRepositoryCircleCi",
     "projects": [
         {
             "title": "Statosio",
@@ -313,8 +361,8 @@ null
 **Table:**  
 | Title | Updated | Release | Workflow | Issues | License |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| [Ascii to svg Generator](https://github.com/flowmcp/flowmcp-core) | <a href="https://api.github.com/repos/flowmcp/flowmcp-core"><img src="https://img.shields.io/github/last-commit/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/flowmcp/flowmcp-core/releases/"><img src="https://img.shields.io/github/v/release/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/flowmcp/flowmcp-core"><img src="https://img.shields.io/github/actions/workflow/status/flowmcp/flowmcp-core/test-on-release.yml?logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/flowmcp/flowmcp-core/issues/"><img src="https://img.shields.io/github/issues/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a><a href="https://github.com/flowmcp/flowmcp-core/issues?q=is:issue%20state:closed"><img src="https://img.shields.io/github/issues-closed/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/flowmcp/flowmcp-core/blob/main/LICENSE"><img src="https://img.shields.io/github/license/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> |
-| [Badge Table](https://github.com/a6b8/badgeTable) | <a href="https://api.github.com/repos/a6b8/badgeTable"><img src="https://img.shields.io/github/last-commit/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/badgeTable/releases/"><img src="https://img.shields.io/github/v/release/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/badgeTable"><img src="https://img.shields.io/github/actions/workflow/status/a6b8/badgeTable/test-on-release.yml?logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/badgeTable/issues/"><img src="https://img.shields.io/github/issues/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a><a href="https://github.com/a6b8/badgeTable/issues?q=is:issue%20state:closed"><img src="https://img.shields.io/github/issues-closed/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/badgeTable/blob/main/LICENSE"><img src="https://img.shields.io/github/license/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> |
+| [Ascii to svg Generator](https://github.com/flowmcp/flowmcp-core) | <a href="https://api.github.com/repos/flowmcp/flowmcp-core"><img src="https://img.shields.io/github/last-commit/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/flowmcp/flowmcp-core/releases/"><img src="https://img.shields.io/github/v/release/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/flowmcp/flowmcp-core/actions"><img src="https://img.shields.io/github/actions/workflow/status/flowmcp/flowmcp-core/test-on-release.yml?logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/flowmcp/flowmcp-core/issues/"><img src="https://img.shields.io/github/issues/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a><a href="https://github.com/flowmcp/flowmcp-core/issues?q=is:issue%20state:closed"><img src="https://img.shields.io/github/issues-closed/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/flowmcp/flowmcp-core/blob/main/LICENSE"><img src="https://img.shields.io/github/license/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> |
+| [Badge Table](https://github.com/a6b8/badgeTable) | <a href="https://api.github.com/repos/a6b8/badgeTable"><img src="https://img.shields.io/github/last-commit/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/badgeTable/releases/"><img src="https://img.shields.io/github/v/release/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/badgeTable/actions"><img src="https://img.shields.io/github/actions/workflow/status/a6b8/badgeTable/test-on-release.yml?logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/badgeTable/issues/"><img src="https://img.shields.io/github/issues/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a><a href="https://github.com/a6b8/badgeTable/issues?q=is:issue%20state:closed"><img src="https://img.shields.io/github/issues-closed/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/badgeTable/blob/main/LICENSE"><img src="https://img.shields.io/github/license/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> |
 
 **Code:**  
 ```js
@@ -374,6 +422,48 @@ const values = {
             "title": "Badge Table",
             "githubUserName": "a6b8",
             "githubRepository": "badgeTable",
+            "githubBranch": "main"
+        }
+    ]
+}
+badgeTable.getTable( values )
+```
+
+### githubDetailsCodeCoverage
+null
+
+**Required Keys:**
+- title
+- githubUserName
+- githubRepository
+- githubWorkflowPath
+
+
+**Table:**  
+| Title | Updated | Release | Workflow | Issues | License |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| [Ascii to svg Generator](https://github.com/flowmcp/flowmcp-core) | <a href="https://api.github.com/repos/flowmcp/flowmcp-core"><img src="https://img.shields.io/github/last-commit/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/flowmcp/flowmcp-core/releases/"><img src="https://img.shields.io/github/v/release/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/flowmcp/flowmcp-core/actions"><img src="https://img.shields.io/github/actions/workflow/status/flowmcp/flowmcp-core/test-on-release.yml?logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/flowmcp/flowmcp-core/issues/"><img src="https://img.shields.io/github/issues/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a><a href="https://github.com/flowmcp/flowmcp-core/issues?q=is:issue%20state:closed"><img src="https://img.shields.io/github/issues-closed/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/flowmcp/flowmcp-core/blob/main/LICENSE"><img src="https://img.shields.io/github/license/flowmcp/flowmcp-core?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> |
+| [Badge Table](https://github.com/a6b8/badgeTable) | <a href="https://api.github.com/repos/a6b8/badgeTable"><img src="https://img.shields.io/github/last-commit/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/badgeTable/releases/"><img src="https://img.shields.io/github/v/release/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/badgeTable/actions"><img src="https://img.shields.io/github/actions/workflow/status/a6b8/badgeTable/test-on-release.yml?logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/badgeTable/issues/"><img src="https://img.shields.io/github/issues/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a><a href="https://github.com/a6b8/badgeTable/issues?q=is:issue%20state:closed"><img src="https://img.shields.io/github/issues-closed/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> | <a href="https://github.com/a6b8/badgeTable/blob/main/LICENSE"><img src="https://img.shields.io/github/license/a6b8/badgeTable?color=0E1116&logo=F3A966&logoColor=F3A966&style=flat&label="></a> |
+
+**Code:**  
+```js
+import { BadgeTable } from 'badgetable'
+const badgeTable = new BadgeTable()
+const values = {
+    "preset": "githubDetailsCodeCoverage",
+    "projects": [
+        {
+            "title": "Ascii to svg Generator",
+            "githubUserName": "flowmcp",
+            "githubRepository": "flowmcp-core",
+            "githubWorkflowPath": "test-on-release.yml",
+            "githubBranch": "main"
+        },
+        {
+            "title": "Badge Table",
+            "githubUserName": "a6b8",
+            "githubRepository": "badgeTable",
+            "githubWorkflowPath": "test-on-release.yml",
             "githubBranch": "main"
         }
     ]

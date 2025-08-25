@@ -3,13 +3,36 @@
   "version": "1.2.3",
   "description": "Helps create summary tables for modules and websites by adding badges through shields.io. It generates complex Markdown code with a simple payload for an easy-to-understand visual overview.",
   "main": "./src/BadgeTable.mjs",
+  "type": "module",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:coverage": "npm test -- --coverage",
+    "test:watch": "npm test -- --watch"
   },
-  "keywords": [ "badge", "markdown", "table generator", "README.md" ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a6b8/badgeTable.git"
+  },
+  "homepage": "https://github.com/a6b8/badgeTable#readme",
+  "bugs": {
+    "url": "https://github.com/a6b8/badgeTable/issues"
+  },
+  "keywords": [ "badge", "markdown", "table generator", "README.md", "shields.io", "github", "npm" ],
   "author": "a6b8",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "src/",
+    "LICENSE",
+    "README.md"
+  ],
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "@jest/globals": "^29.7.0"
+  }
 }

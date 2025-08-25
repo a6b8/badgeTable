@@ -1,8 +1,10 @@
 tsconfig.json
 package-lock.json
 node_modules/
-tests
-.circleci
+tests/
+.circleci/
+coverage/
+.github/
 nodemon.json
-README.md
+jest.config.mjs
 presets.md
