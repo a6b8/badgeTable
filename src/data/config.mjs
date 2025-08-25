@@ -135,6 +135,7 @@ export const configImported = {
                 [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubRelease', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubWorkflow', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__codeCoverage', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__githubIssuesOpenAndClosed', 'tree__markdown__alignment__left' ],
                 [ 'tree__columns__license', 'tree__markdown__alignment__left' ]
             ]
@@ -348,7 +349,6 @@ export const configImported = {
         'codeCoverage': {
             'struct': '<<wrapperUrl>><<shield>><</wrapperUrl>>',
             'wrapperUrl': '{{tree__links__codecov}}',
-            // 'shield': 'https://img.shields.io/github/actions/workflow/status/{{githubUserName}}/{{githubRepository}}/{{githubWorkflowPath}}?{{tree__styles__buildPassing__url}}',
             'shield': 'https://img.shields.io/codecov/c/github/{{githubUserName}}/{{githubRepository}}?{{tree__styles__default__url}}'
         },
         'gemVersion': {
