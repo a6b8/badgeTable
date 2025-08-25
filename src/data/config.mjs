@@ -87,6 +87,21 @@ export const configImported = {
                 [ 'tree__columns__url', 'tree__markdown__alignment__left' ]
             ]
         },
+        'documentationRepositoryCodeCoverage': {
+            'headline': 'Website Repository',
+            'description': 'Table for displaying website repositories with images, uptime status, GitHub repository details, and URLs.',
+            'validation': [ 'title', 'imageUrl', 'uptimeRobotId', 'githubUserName', 'githubRepository', 'url' ],
+            'structs': [
+                [ 'tree__columns__text', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubUpdated', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__uptime', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubRelease', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubWorkflow', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__codeCoverage', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__githubIssuesOpenAndClosed', 'tree__markdown__alignment__left' ],
+                [ 'tree__columns__urlShort', 'tree__markdown__alignment__left' ]
+            ]
+        },
         'documentationRepositoryCircleCi': {
             'headline': 'Website Repository',
             'description': 'Table for displaying website repositories with images, uptime status, GitHub repository details, and URLs.',
@@ -244,6 +259,10 @@ export const configImported = {
             'headline': 'Url',
             'row': [ 'tree__badges__textUrl' ],
         },
+        'urlShort': {
+            'headline': 'Url',
+            'row': [ 'tree__badges__textUrlShort' ],
+        },
         'article': {
             'headline': 'Article',
             'row': [ 'tree__badges__articleUrl' ],
@@ -333,6 +352,11 @@ export const configImported = {
         },
         'textUrl': {
             'struct': '<<markdownUrlPure>>',
+            'wrapperUrl': '{{url}}',
+            'shield': ''
+        },
+        'textUrlShort': {
+            'struct': '<<markdownUrlX>>',
             'wrapperUrl': '{{url}}',
             'shield': ''
         },
